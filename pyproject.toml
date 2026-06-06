@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bayesian-shelf-life-arrhenius"
+version = "0.1.0"
+description = "Reproducibility package for the Bayesian multi-temperature shelf-life prediction study (paper-A), extending Faya et al. (2018)."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Yasushi Arai" }]
+keywords = ["pharmaceutical", "stability", "shelf-life", "Arrhenius", "Bayesian", "CMC"]
+
+# Exact pins: numerics (numpy/scipy/pandas/pyarrow) and the MCMC stack
+# (PyMC/numpyro/JAX) change behaviour across versions, so the versions that
+# produced the committed results/ are frozen here. Values fresh-resolved from
+# the production environment on 2026-06-06.
+dependencies = [
+    "numpy==2.4.4",
+    "scipy==1.17.1",
+    "pandas==3.0.2",
+    "pyarrow==24.0.0",
+    "matplotlib==3.10.9",
+]
+
+[project.optional-dependencies]
+# Full MCMC estimator (lazy-imported in paper_a/analysis/estimators/mcmc.py).
+# Only needed for the `full` reproduction path / `pytest -m slow`.
+mcmc = [
+    "pymc==5.28.5",
+    "numpyro==0.21.0",
+    "jax==0.10.0",
+    "jaxlib==0.10.0",
+    "arviz==0.23.4",
+    "pytensor==2.38.3",
+]
+dev = [
+    "pytest==8.4.2",
+]
+
+[tool.setuptools.packages.find]
+include = ["paper_a*"]
+
+[tool.setuptools.package-data]
+"paper_a" = [
+    "data/core/*.csv", "data/core/*.json",
+    "data/robustness/*.csv", "data/robustness/*.json",
+    "results/*.json", "results/*.parquet",
+    "figures/*.png",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: marks tests as slow (PyMC sampling, large datasets) — opt-in via -m slow",
+]

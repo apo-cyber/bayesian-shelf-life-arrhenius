@@ -1,0 +1,5729 @@
+{
+  "data_class": "synthetic",
+  "cases": [
+    {
+      "case_id": "core_001",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 3,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_002",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 3,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_003",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 3,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_004",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 3,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_005",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 3,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_006",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 3,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_007",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 3,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_008",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 3,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_009",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 3,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_010",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 4,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_011",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 4,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_012",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 4,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_013",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 4,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_014",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 4,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_015",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 4,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_016",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 4,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_017",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 4,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_018",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 4,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_019",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 6,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_020",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 6,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_021",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 6,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_022",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 6,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_023",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 6,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_024",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 6,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_025",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 6,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_026",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 6,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_027",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 2,
+      "n_points": 6,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_028",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 3,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_029",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 3,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_030",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 3,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_031",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 3,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_032",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 3,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_033",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 3,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_034",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 3,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_035",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 3,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_036",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 3,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_037",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 4,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_038",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 4,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_039",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 4,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_040",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 4,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_041",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 4,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_042",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 4,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_043",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 4,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_044",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 4,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_045",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 4,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_046",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 6,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_047",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 6,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_048",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 6,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_049",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 6,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_050",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 6,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_051",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 6,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_052",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 6,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_053",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 6,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_054",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 3,
+      "n_points": 6,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_055",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 3,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_056",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 3,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_057",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 3,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_058",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 3,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_059",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 3,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_060",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 3,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_061",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 3,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_062",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 3,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_063",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 3,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        3.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          18.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_064",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 4,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_065",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 4,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_066",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 4,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_067",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 4,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_068",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 4,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_069",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 4,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_070",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 4,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_071",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 4,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_072",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 4,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_073",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 6,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_074",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 6,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_075",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 6,
+      "noise_level": "small",
+      "sigma_obs": 0.01,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_076",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 6,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_077",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 6,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_078",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 6,
+      "noise_level": "medium",
+      "sigma_obs": 0.02,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_079",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 6,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "accurate",
+      "prior_ea_kj_mol": 80.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_080",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 6,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "moderate",
+      "prior_ea_kj_mol": 90.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    },
+    {
+      "case_id": "core_081",
+      "layer": "core",
+      "data_class": "synthetic",
+      "kinetics": "first_order",
+      "k_of_t": "arrhenius",
+      "ea_true_kj_mol": 80.0,
+      "ln_a_true": 25.902039504783104,
+      "target_sl_at_25c_months": 30.0,
+      "t90_true_25c_months": 61.6223915323707,
+      "t90_true_by_temp_months": {
+        "40.0": 13.13284116426073,
+        "50.0": 5.074566674489599,
+        "60.0": 2.076014838278037,
+        "70.0": 0.8947171913553155
+      },
+      "sl_at_spec_true_25c_months": 30.000000000000057,
+      "sl_at_spec_true_by_temp_months": {
+        "40.0": 6.393540158545441,
+        "50.0": 2.470481856497196,
+        "60.0": 1.0106788068363892,
+        "70.0": 0.4355805588388998
+      },
+      "spec_lower": 95.0,
+      "initial_content": 100.0,
+      "n_t": 4,
+      "n_points": 6,
+      "noise_level": "large",
+      "sigma_obs": 0.05,
+      "prior_accuracy": "strong",
+      "prior_ea_kj_mol": 105.0,
+      "prior_ea_sd_kj_mol": 30.0,
+      "temperatures_c": [
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "time_points_months": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0
+      ],
+      "k_true_by_temp": {
+        "40.0": 0.008022674936825614,
+        "50.0": 0.020762465529812642,
+        "60.0": 0.050751330729995256,
+        "70.0": 0.11775845672332105
+      },
+      "true_sl_method": {
+        "calibration_chain": "target_sl_at_25c_months -> k_25 -> ln A (Arrhenius) -> k(T) at each temperature -> t_SL(T) / t_90(T)",
+        "k_25_formula": "k_25 = -ln(spec_lower/initial)/target_sl = -ln(95.0/100.0)/30.0",
+        "lna_formula": "ln A = ln(k_25) + Ea*1000/(R*T_25K) = ln(k_25) + 80.0*1000/(8.314*298.15)",
+        "k_at_temp_formula": "k(T) = exp(ln A - Ea*1000/(R*T_K))",
+        "true_sl_formula": "t_SL(T) = -ln(spec_lower/initial) / k(T)",
+        "true_t90_formula": "t_90(T) = -ln(0.9) / k(T)   # content = 90% (10% degradation)",
+        "computed_k_25": 0.0017097764795850194,
+        "computed_ln_a": 25.902039504783104
+      },
+      "long_term_25c": {
+        "temperature_c": 25.0,
+        "duration_months": 36.0,
+        "time_points_months": [
+          0.0,
+          6.0,
+          12.0,
+          18.0,
+          24.0,
+          36.0
+        ],
+        "k_25_true": 0.001709776479585016
+      },
+      "n_replicates": 1000,
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "cell": "n_T=3, prior=strong",
+  "cell_filter": {
+    "n_t": 3,
+    "prior_accuracy": "strong"
+  },
+  "truth_field": "t90_true_25c_months",
+  "true_t90_25C_months": 61.6223915323707,
+  "case_ids": [
+    "core_030",
+    "core_033",
+    "core_036",
+    "core_039",
+    "core_042",
+    "core_045",
+    "core_048",
+    "core_051",
+    "core_054"
+  ],
+  "n_replicates_per_estimator": {
+    "two_stage_conjugate": 9000,
+    "mcmc": 900,
+    "classical_ols_multi_temp": 9000,
+    "classical_ich_q1e": 9000
+  },
+  "metrics": {
+    "two_stage_conjugate": {
+      "bias_median": {
+        "point": -2.6723915323706997,
+        "ci_low": -3.322391532370702,
+        "ci_high": -1.8223915323707018
+      },
+      "bias_sd_capped120": {
+        "point": 32.457064270514536,
+        "ci_low": 32.10056266783532,
+        "ci_high": 32.80611791671363
+      },
+      "n_total": 9000,
+      "n_successful": 8918
+    },
+    "mcmc": {
+      "bias_median": {
+        "point": 36.424027858279615,
+        "ci_low": 25.671510396205022,
+        "ci_high": 43.547982760549814
+      },
+      "bias_sd_capped120": {
+        "point": 31.413035345661328,
+        "ci_low": 30.317143486303397,
+        "ci_high": 32.570576314238956
+      },
+      "n_total": 900,
+      "n_successful": 493
+    },
+    "classical_ols_multi_temp": {
+      "bias_median": {
+        "point": -5.097307835887911,
+        "ci_low": -6.185897506140954,
+        "ci_high": -4.035842502516836
+      },
+      "bias_sd_capped120": {
+        "point": 36.86855163284801,
+        "ci_low": 36.519898389393504,
+        "ci_high": 37.21807698326531
+      },
+      "n_total": 9000,
+      "n_successful": 8165
+    },
+    "classical_ich_q1e": {
+      "bias_median": {
+        "point": -1.4223915323706962,
+        "ci_low": -1.8223915323707018,
+        "ci_high": -1.0223915323706976
+      },
+      "bias_sd_capped120": {
+        "point": 23.01571782245916,
+        "ci_low": 22.62386222086866,
+        "ci_high": 23.404841071133742
+      },
+      "n_total": 9000,
+      "n_successful": 8452
+    }
+  },
+  "bootstrap_config": {
+    "n_resamples": 10000,
+    "method": "BCa",
+    "confidence_level": 0.95,
+    "random_state": 42,
+    "cap_months": 120.0,
+    "resampling_unit": "successful replicate (i.i.d., pooled over 9 cases)"
+  },
+  "metric_definitions": {
+    "success": "error_code is null AND t90_point_estimate_months finite (matches metrics.py)",
+    "bias_median": "median(est - t90_true_25c_months)  [raw, uncapped]",
+    "bias_sd_capped120": "std(min(est, 120) - t90_true_25c_months, ddof=1)"
+  }
+}

@@ -1,0 +1,40 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Yasushi Arai
+
+The DATA artefacts in this repository — specifically the synthetic stability
+datasets and derived results under:
+
+    paper_a/data/        (core/ and robustness/ : data.csv, long_term_25c.csv,
+                          truth.json)
+    paper_a/results/     (cell_metrics.json, bootstrap_ci.json,
+                          estimator_results.parquet)
+    paper_a/figures/     (generated figure PNGs)
+
+are licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0).
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material for any purpose,
+    even commercially
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made.
+
+The full legal text of CC BY 4.0 is available at:
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+A human-readable summary is at:
+    https://creativecommons.org/licenses/by/4.0/
+
+Suggested attribution:
+    "Synthetic stability datasets from Arai (2026),
+     bayesian-shelf-life-arrhenius, CC BY 4.0."
+
+Note: All data in this repository is SYNTHETIC (every truth.json record carries
+data_class: "synthetic"). No measured or third-party stability data is included.
+
+CODE in this repository (including paper_a/vendor/) is licensed separately
+under the MIT License; see LICENSE.

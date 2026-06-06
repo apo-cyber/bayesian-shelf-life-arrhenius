@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+type: software
+title: "bayesian-shelf-life-arrhenius: reproducibility package for Bayesian multi-temperature shelf-life prediction (paper-A)"
+abstract: >-
+  Synthetic-data simulation study comparing a two-stage OLS/conjugate Bayesian
+  estimator, full MCMC, classical multi-temperature OLS, and the ICH Q1E
+  long-term baseline for pharmaceutical shelf-life prediction from accelerated
+  stability data, extending Faya et al. (2018).
+version: "0.1.0"
+date-released: "2026-06-06"
+license: MIT
+authors:
+  - given-names: Yasushi
+    family-names: Arai
+    orcid: "https://orcid.org/0009-0005-7300-4234"
+# Software archival DOI (Zenodo). Placeholder until release is archived.
+doi: "10.5281/zenodo.TBD"
+repository-code: "https://github.com/apo-cyber/bayesian-shelf-life-arrhenius"
+contact:
+  - email: "[TBD-EMAIL]"
+    given-names: Yasushi
+    family-names: Arai
+keywords:
+  - pharmaceutical
+  - stability
+  - shelf-life
+  - Arrhenius
+  - Bayesian
+  - CMC
+references:
+  - type: article
+    title: "Using accelerated drug stability results to inform long-term studies in shelf life determination"
+    authors:
+      - family-names: Faya
+        given-names: Paul
+      - family-names: Seaman
+        given-names: John W.
+      - family-names: Stamey
+        given-names: James D.
+    journal: "Statistics in Medicine"
+    volume: 37
+    issue: 17
+    start: 2599
+    end: 2615
+    year: 2018
+    doi: "10.1002/sim.7663"
+notes: >-
+  The accompanying manuscript has been submitted to Statistics in Medicine.
+  This repository contains code and synthetic data only; the manuscript PDF is
+  not included.
