@@ -177,7 +177,7 @@ def generate_case(scenario: ScenarioSpec, n_replicates: int) -> dict:
     速度論種別ごとに k_25 を `target_sl_at_25c_months` から逆算 → Arrhenius
     で ln A 確定 → 各加速温度の k_T → 各温度の真 SL/真 t90 を kinetics モデル
     に従って算出.全 kinetics で真 SL = target が成立する(頑健性層のバイアス
-    評価が崩れない).真 t90 (content=90%) は仕様書 §4 主指標 (Faya Fig 4.5)
+    評価が崩れない).真 t90 (content=90%) は仕様書 §4 主指標 (Faya Fig 8)
     のための別量として並列に記録する.
 
     Returns
@@ -278,7 +278,7 @@ def generate_case(scenario: ScenarioSpec, n_replicates: int) -> dict:
                     COLUMN_NAMES["response"]: float(c_i),
                 })
 
-    # 25°C 長期試験データ (classical_ich_q1e 用、Faya Fig 4.5 物理量整合)
+    # 25°C 長期試験データ (classical_ich_q1e 用、Faya Fig 8 物理量整合)
     n_points = int(scenario["n_points"])
     long_term_times = np.array(LONG_TERM_25C_TIME_GRIDS[n_points], dtype=float)
     long_term_rows: list[dict] = []
@@ -310,7 +310,7 @@ def generate_case(scenario: ScenarioSpec, n_replicates: int) -> dict:
         "ln_a_true": ln_a_true,
         "target_sl_at_25c_months": target_sl,
         # 仕様書 §4 主指標: 真の t90 (content=90% 到達時間) を 25°C と各加速温度で算出.
-        # 推定器バイアス評価はこの値を基準に行う (Faya 2018 Fig 4.5 と整合).
+        # 推定器バイアス評価はこの値を基準に行う (Faya 2018 Fig 8 と整合).
         "t90_true_25c_months": t90_true_25c,
         "t90_true_by_temp_months": t90_true_by_temp,
         # 実務指標 (補助): spec_lower 到達時間.target との一致確認用.

@@ -1,6 +1,6 @@
 """Faya 2018 博士論文 Table 4.2 の 4 design point 真部分集合性テスト.
 
-仕様: docs/strategy/paper-A-dataset-spec-DRAFT.md §2.2
+仕様: README.md「Data」セクション / paper_a/docs/confirmed_parameters.md
 
 中核 81 シナリオが Faya の (E, σ) 2×2 設計を包含することを保証する.
 本テストは「対応する Ea と noise の組み合わせが core シナリオに存在する」

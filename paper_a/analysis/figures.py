@@ -1,4 +1,4 @@
-"""t90 推定値分布図 (仕様書 §4 主指標、Faya 2018 Fig 4.5 と同形式).
+"""t90 推定値分布図 (仕様書 §4 主指標、Faya 2018 Fig 8 と同形式).
 
 横軸: cell 群 (例: n_T 別 × Prior 別).
 縦軸: t90 推定値の 95% 区間 (CI cap=120 月で打ち切り表示).
@@ -37,7 +37,7 @@ def fig_t90_estimates_by_cell(
     ),
     output_path: Path | None = None,
 ) -> Path:
-    """t90 推定値分布図を出力 (Faya 2018 Fig 4.5 と同形式).
+    """t90 推定値分布図を出力 (Faya 2018 Fig 8 と同形式).
 
     Parameters
     ----------

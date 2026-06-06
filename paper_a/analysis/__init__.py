@@ -1,6 +1,6 @@
 """4 推定器 × 3 指標の解析パイプライン (仕様 §B/§C、再開プロンプト §B.1).
 
-主指標は t90_true_25c_months ベース (Faya 2018 Fig 4.5 整合).
+主指標は t90_true_25c_months ベース (Faya 2018 Fig 8 整合).
 sl_at_spec_true_25c_months は実務指標として truth に保持されるが、論文評価の
 主軸ではない.
 """

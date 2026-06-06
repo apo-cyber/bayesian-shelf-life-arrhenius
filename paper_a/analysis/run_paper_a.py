@@ -201,7 +201,7 @@ def main(argv: list[str] | None = None) -> int:
     ))
     print(f"→ {metrics_json_path}")
 
-    # t90 推定値分布図 (全 9 cell、Faya 2018 Fig 4.5 と同形式)
+    # t90 推定値分布図 (全 9 cell、Faya 2018 Fig 8 と同形式)
     fig_path = fig_t90_estimates_by_cell(
         results_by_estimator=all_results,
         truth_by_case=all_truth,

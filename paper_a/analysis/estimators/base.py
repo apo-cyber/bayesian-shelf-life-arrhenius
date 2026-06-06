@@ -4,7 +4,7 @@
 表記揺れを起こさないこと (前セッション §3.3.1 教訓).
 
 全推定器は spec_lower=90.0 (t90 = content 90% 到達時間) を主指標として算出する.
-これにより truth.json の `t90_true_25c_months` (Faya Fig 4.5 整合) と直接
+これにより truth.json の `t90_true_25c_months` (Faya Fig 8 整合) と直接
 バイアス比較が成立する.補助で spec_lower=95.0 も走らせる場合は
 `spec_lower_used` フィールドで識別、デフォルト集計・図は 90.0 のみ参照する
 (再開プロンプト §B.4 判断点 4).

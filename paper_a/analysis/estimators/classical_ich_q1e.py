@@ -5,14 +5,14 @@
     入力は 25°C 長期試験データ (n_points=3/4/6 × 36 ヶ月、generate.py が
     long_term_25c.csv に出力).加速試験データには適用しない.
     これにより他 3 推定器 (25°C への外挿 t90) と物理量が一致し、Faya 2018
-    Fig 4.5 形式の apples-to-apples 比較が成立する (再開プロンプト判断 1).
+    Fig 8 形式の apples-to-apples 比較が成立する (再開プロンプト判断 1).
 
 論文での記述:
     ICH Q1E §B.1 は 25°C 長期試験データに対する単温度線形回帰.加速試験
     データを扱う他 3 推定器とは入力データが異なる ("規制実務での標準手法
     を 25°C 長期データに適用したベースライン").Methods に明記すること.
 
-ci_side = "two-sided" を採用 (Faya Fig 4.5 整合の 95% CI 比較).
+ci_side = "two-sided" を採用 (Faya Fig 8 整合の 95% CI 比較).
 ICH Q1E §2.6 規定は one-sided 95% だが、本論文の主指標は推定値の 95%
 中心区間を 4 推定器で揃えるため two-sided を採用する旨を Discussion で明記.
 """
@@ -54,7 +54,7 @@ def estimate(
         True で ln(C) 線形回帰 (1 次反応近似).False は 0 次反応相当 (ICH §B.1 標準).
         合成データは 1 次反応で生成しているため True が適切.
     ci_side : str
-        "two-sided" で Faya Fig 4.5 整合の 95% CI.
+        "two-sided" で Faya Fig 8 整合の 95% CI.
 
     Returns
     -------

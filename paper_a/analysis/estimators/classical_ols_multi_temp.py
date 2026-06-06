@@ -81,7 +81,7 @@ def estimate(
     spec_lower : float
         主指標は 90.0 (t90 = content 90% 到達時間).
     target_temp_c : float
-        外挿先温度 (25°C 固定、Faya Fig 4.5 整合).
+        外挿先温度 (25°C 固定、Faya Fig 8 整合).
 
     Returns
     -------

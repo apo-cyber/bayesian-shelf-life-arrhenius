@@ -1,6 +1,6 @@
 """中核 81 + 頑健性 20 シナリオ定義および列名規約.
 
-仕様: docs/strategy/paper-A-dataset-spec-DRAFT.md §2.1, §2.2
+仕様: README.md「Data」セクション / paper_a/docs/confirmed_parameters.md
 中核 = n_T {2,3,4} × n_points {3,4,6} × ノイズ {小,中,大} × Prior 正確性 {正確,中庸乖離,強乖離}
      = 3×3×3×3 = 81
 頑健性 = 分解速度論 {一次,二次,自触媒,誘導期} × 温度依存性
@@ -211,7 +211,7 @@ ROBUSTNESS_SCENARIOS: list[ScenarioSpec] = _build_robustness_scenarios()
 # E は kcal/mol → kJ/mol (×4.184) 換算.σ は t90 推定量の SD で本設計の
 # 「ノイズ」と直接同型ではないが、Ea×ノイズの 2×2 設計を本中核 81 が
 # 真部分集合として包含することを Faya 文脈に翻訳して保持する.
-# 詳細: docs/strategy/paper-A-dataset-spec-DRAFT.md §2.2.
+# 詳細: README.md「Data」セクション / paper_a/docs/confirmed_parameters.md.
 FAYA_DESIGN_POINTS = [
     {"E_kcal": 16, "sigma_label": "low",  "t90_months": 37.48, "ea_kj": EA_TRUE_KJ_LOW},
     {"E_kcal": 16, "sigma_label": "high", "t90_months": 37.48, "ea_kj": EA_TRUE_KJ_LOW},
