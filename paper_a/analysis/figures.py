@@ -32,12 +32,11 @@ def fig_t90_estimates_by_cell(
     cells: list[tuple[int, str]] | None = None,
     cap_months: float = SHELF_LIFE_CAP_MONTHS,
     truth_field: str = "t90_true_25c_months",
-    title: str = (
-        "t90 point-estimate distributions — 4 estimators × (n_T × prior accuracy) cells"
-    ),
     output_path: Path | None = None,
 ) -> Path:
     """t90 推定値分布図を出力 (Faya 2018 Fig 8 と同形式).
+
+    図内タイトルは付さない (journal 慣習: 説明は manuscript の caption に委譲).
 
     Parameters
     ----------
@@ -144,7 +143,6 @@ def fig_t90_estimates_by_cell(
     ax.set_xticks(cell_x_positions)
     ax.set_xticklabels(cell_labels, fontsize=9)
     ax.set_ylabel("t90 estimate at 25°C (months, capped at 120 for display)")
-    ax.set_title(title)
     ax.set_ylim(0, cap_months * 1.05)
     ax.grid(True, alpha=0.3)
 
@@ -186,7 +184,6 @@ def fig_zoom_core_cell(
         cells=cells,
         cap_months=cap_months,
         truth_field=truth_field,
-        title=f"t90 estimates — central cells (n_T = {n_t} × 3 prior levels)",
         output_path=output_path,
     )
 
@@ -228,9 +225,6 @@ def fig_mcmc_nonconvergence_heatmap(
     ax.set_xticklabels([f"prior={p}" for p in prior_values])
     ax.set_yticks(range(len(n_t_values)))
     ax.set_yticklabels([f"n_T={n}" for n in n_t_values])
-    ax.set_title(
-        "MCMC non-convergence rate over core cells (%)\n(R-hat ≥ 1.01 or ESS < 400)"
-    )
 
     # セル内に数値表示
     for i in range(len(n_t_values)):

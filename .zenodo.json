@@ -1,0 +1,30 @@
+{
+  "title": "bayesian-shelf-life-arrhenius: reproducibility package for Bayesian multi-temperature shelf-life prediction (paper-A)",
+  "description": "Reproducibility package for a synthetic-data simulation study comparing four estimators of pharmaceutical shelf life from accelerated stability data: a two-stage OLS/conjugate Bayesian procedure, full MCMC (NUTS), classical multi-temperature OLS, and the ICH Q1E long-term baseline, across 81 core cases and 20 robustness cases, extending Faya et al. (2018). Contains code and synthetic data only (every truth.json carries data_class=\"synthetic\"); no measured or third-party stability data, and no manuscript text, are included. Code is MIT-licensed; data (paper_a/data, paper_a/results, paper_a/figures) is CC-BY-4.0.",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Arai, Yasushi",
+      "orcid": "0009-0005-7300-4234"
+    }
+  ],
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "pharmaceutical",
+    "stability",
+    "shelf-life",
+    "Arrhenius",
+    "Bayesian",
+    "MCMC",
+    "CMC",
+    "ICH Q1E"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "references",
+      "identifier": "10.1002/sim.7663",
+      "scheme": "doi"
+    }
+  ]
+}
