@@ -138,7 +138,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument(
         "--skip-mcmc",
         action="store_true",
-        help="MCMC をスキップ (他 3 推定器のみ走らせる).D.3 図ドラフト動作確認時に使う.",
+        help="MCMC をスキップ (他 3 推定器のみ走らせる).図の動作確認時に使う.",
     )
     p.add_argument("--nuts-sampler", default="numpyro", choices=["numpyro", "default"])
     args = p.parse_args(argv)
@@ -201,7 +201,7 @@ def main(argv: list[str] | None = None) -> int:
     ))
     print(f"→ {metrics_json_path}")
 
-    # Faya Fig 4.5 ドラフト図 (全 9 cell)
+    # t90 推定値分布図 (全 9 cell、Faya 2018 Fig 4.5 と同形式)
     fig_path = fig_t90_estimates_by_cell(
         results_by_estimator=all_results,
         truth_by_case=all_truth,

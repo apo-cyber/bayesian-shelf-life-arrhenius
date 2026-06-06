@@ -1,4 +1,4 @@
-"""Faya 2018 Fig 4.5 形式ドラフト図 (仕様書 §4 主指標と同形式).
+"""t90 推定値分布図 (仕様書 §4 主指標、Faya 2018 Fig 4.5 と同形式).
 
 横軸: cell 群 (例: n_T 別 × Prior 別).
 縦軸: t90 推定値の 95% 区間 (CI cap=120 月で打ち切り表示).
@@ -32,9 +32,12 @@ def fig_t90_estimates_by_cell(
     cells: list[tuple[int, str]] | None = None,
     cap_months: float = SHELF_LIFE_CAP_MONTHS,
     truth_field: str = "t90_true_25c_months",
+    title: str = (
+        "t90 point-estimate distributions — 4 estimators × (n_T × prior accuracy) cells"
+    ),
     output_path: Path | None = None,
 ) -> Path:
-    """Faya Fig 4.5 形式の draft 図を出力.
+    """t90 推定値分布図を出力 (Faya 2018 Fig 4.5 と同形式).
 
     Parameters
     ----------
@@ -49,7 +52,7 @@ def fig_t90_estimates_by_cell(
 
     # 真値 (代表値): core 81 は target_sl=30 × first_order で全 case 同じ
     # t90_true_25c=61.6224 月になる設計.uniformity を確認して単一値として扱う.
-    # 頑健性 20 case は kinetics 別に異なるが、本ドラフト図は core 中心の評価.
+    # 頑健性 20 case は kinetics 別に異なるが、本図は core 中心の評価.
     core_truth_values = [
         float(truth_by_case[c][truth_field])
         for c in truth_by_case if truth_by_case[c].get("layer") == "core"
@@ -141,9 +144,7 @@ def fig_t90_estimates_by_cell(
     ax.set_xticks(cell_x_positions)
     ax.set_xticklabels(cell_labels, fontsize=9)
     ax.set_ylabel("t90 estimate at 25°C (months, capped at 120 for display)")
-    ax.set_title(
-        "Paper A — Fig 4.5 draft: t90 estimates × 4 estimators × (n_T × Prior) cells"
-    )
+    ax.set_title(title)
     ax.set_ylim(0, cap_months * 1.05)
     ax.grid(True, alpha=0.3)
 
@@ -185,6 +186,7 @@ def fig_zoom_core_cell(
         cells=cells,
         cap_months=cap_months,
         truth_field=truth_field,
+        title=f"t90 estimates — central cells (n_T = {n_t} × 3 prior levels)",
         output_path=output_path,
     )
 
@@ -226,7 +228,9 @@ def fig_mcmc_nonconvergence_heatmap(
     ax.set_xticklabels([f"prior={p}" for p in prior_values])
     ax.set_yticks(range(len(n_t_values)))
     ax.set_yticklabels([f"n_T={n}" for n in n_t_values])
-    ax.set_title("MCMC non-convergence rate (%) at core cells\n(R-hat≥1.01 OR ESS<400)")
+    ax.set_title(
+        "MCMC non-convergence rate over core cells (%)\n(R-hat ≥ 1.01 or ESS < 400)"
+    )
 
     # セル内に数値表示
     for i in range(len(n_t_values)):
