@@ -15,7 +15,7 @@ import pandas as pd
 
 from paper_a.analysis.aggregation import compute_all_slices
 from paper_a.analysis.figures import (
-    faya_fig_4_5_draft,
+    fig_t90_estimates_by_cell,
     fig_mcmc_nonconvergence_heatmap,
     fig_zoom_core_cell,
 )
@@ -75,10 +75,10 @@ def main() -> int:
     ))
     print(f"→ {metrics_path}")
 
-    fig1 = faya_fig_4_5_draft(
+    fig1 = fig_t90_estimates_by_cell(
         results_by_estimator=results_by_estimator,
         truth_by_case=truth_by_case,
-        output_path=FIGURES_DIR / "fig_4_5_draft.png",
+        output_path=FIGURES_DIR / "fig_t90_estimates_by_cell.png",
     )
     print(f"→ {fig1}")
 

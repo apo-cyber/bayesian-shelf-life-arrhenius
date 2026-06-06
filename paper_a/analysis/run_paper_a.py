@@ -10,7 +10,7 @@
 出力:
     paper_a/results/estimator_results.parquet (4 推定器 × cell × rep)
     paper_a/results/cell_metrics.json         (集計 3 指標 + 補助)
-    paper_a/figures/fig_4_5_draft.png         (Faya 形式)
+    paper_a/figures/fig_t90_estimates_by_cell.png         (Faya 形式)
 """
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ from paper_a.analysis.estimators import (
     two_stage_conjugate,
 )
 from paper_a.analysis.figures import (
-    faya_fig_4_5_draft,
+    fig_t90_estimates_by_cell,
     fig_mcmc_nonconvergence_heatmap,
     fig_zoom_core_cell,
 )
@@ -202,10 +202,10 @@ def main(argv: list[str] | None = None) -> int:
     print(f"→ {metrics_json_path}")
 
     # Faya Fig 4.5 ドラフト図 (全 9 cell)
-    fig_path = faya_fig_4_5_draft(
+    fig_path = fig_t90_estimates_by_cell(
         results_by_estimator=all_results,
         truth_by_case=all_truth,
-        output_path=FIGURES_DIR / "fig_4_5_draft.png",
+        output_path=FIGURES_DIR / "fig_t90_estimates_by_cell.png",
     )
     print(f"→ {fig_path}")
 

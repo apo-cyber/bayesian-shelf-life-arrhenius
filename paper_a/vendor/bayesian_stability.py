@@ -42,8 +42,6 @@
     不確かさ: ln(k) の予測分散から delta 法で τ の CI を計算
 """
 
-import math
-
 import numpy as np
 from scipy import stats
 from typing import List, Dict, Optional
@@ -117,9 +115,7 @@ def _cap(v: float, max_val: float = 120.0) -> float:
         あるが、実務的には意味がない (120 ヶ月 = 10 年で打ち切り)。
 
     制約:
-        本関数の使用は run_bayesian_stability のみ。単一温度モード
-        (calculate_single_temp_arrhenius_extrapolation) は別ロジックで
-        上限管理しているため、本関数を呼ばない。
+        本関数の使用は run_bayesian_stability のみ。
 
     実装状況:
         値がキャップに到達した場合は結果 dict の `capped: True` フラグ + warnings
@@ -255,8 +251,7 @@ def run_bayesian_stability(
         5. デフォルト Ea ~ N(80, 30) kJ/mol の根拠 (L2.4 で検証済み):
            - 実用的医薬品分解で観測される Ea 範囲(50-150 kJ/mol)を
              ±2σ で覆う弱情報事前。
-           - 単温度モード (calculate_single_temp_arrhenius_extrapolation) の
-             router デフォルト N(92, 5) との差:
+           - 単温度モードの router デフォルト N(92, 5) との差:
              - 多温度モードは複数温度の OLS から十分な情報が得られるため、
                prior は弱情報 (SD=30) で良い。
              - 単温度モードは 1 加速温度のみで Arrhenius 外挿に必要な Ea を
@@ -275,9 +270,8 @@ def run_bayesian_stability(
              詳細は docs/audit/bayesian-multi-temp-icq1e-alignment.md 参照。
 
     参照:
-        - 単一温度モード (calculate_single_temp_arrhenius_extrapolation)
-          は Faya 2018 / Chau 2023 の概念フレームと整合 (本文未取得につき
-          抄録レベル)、ICH Q1E §B.2.2.2 "Other methods" 枠で扱う
+        - 単一温度モードは Faya 2018 / Chau 2023 の概念フレームと整合
+          (本文未取得につき抄録レベル)、ICH Q1E §B.2.2.2 "Other methods" 枠で扱う
         - 多温度モード Layer 1-2 監査:
           docs/audit/bayesian-multi-temp-audit-plan.md
         - ICH Q1E 整合性メモ:
@@ -703,255 +697,5 @@ def run_bayesian_stability(
         "condition_fits": condition_fits,
         "arrhenius_plot": arrhenius_plot,
         "arrhenius_observed": arrhenius_observed,
-        "warnings": warnings_list,
-    }
-
-
-def calculate_single_temp_arrhenius_extrapolation(
-    temp_c: float,
-    times_days: list,
-    contents: list,
-    prior_ea_kj: float,
-    prior_ea_sd_kj: float,
-    pred_temp_c: float = 25.0,
-    spec_lower: float = 95.0,
-    c0: float = 100.0,
-) -> dict:
-    """
-    単一加速温度のデータと prior Ea を用いて長期保存条件での有効期間を外挿する
-    （ICH Q1A 加速試験対応）。
-
-    手法の本質:
-        加速温度での k_acc をデータから OLS で推定し、prior の Ea
-        （アレニウス解析から引き継ぎ可）を用いて予測保存温度での k に
-        Arrhenius 式で外挿する。delta 法で不確実性を伝播させて CI を計算する。
-
-    注意:
-        これは prior + delta 法による不確実性伝播であり、Ea のデータによる
-        事後更新は行わない。厳密な Bayesian 事後更新ではなく、Arrhenius 外挿
-        に prior Ea の不確実性を反映させる手法である。多温度モード
-        (run_bayesian_stability) では真の正規共役ベイズ更新が行われるが、
-        本関数では prior Ea を「既知パラメータ＋既知不確実性」として扱う。
-
-    構造的制限 (Phase B3/B4 で確認、Layer 6 監査クローズ):
-        単温度モードでは Arrhenius 関係式を 1 点の (T, k) で解けないため
-        Ea_data の独立推定が不可能。結果として:
-        - PRIOR_DATA_INCONSISTENCY 警告 (B4) は適用範囲外
-        - 古典 ICH §B.1 アルゴリズム (25°C 回帰データ要) も適用範囲外
-        詳細: docs/audit/paper_theory_draft.md §8.3、
-              docs/audit/layer4_classical_ich_comparison.md §4
-
-    Raises
-    ------
-    ValueError
-        - times_days と contents の長さ不一致
-    StabilityHardFailWarning (Phase B4 由来)
-        - PQ データ点数 ≤ 2 (PQ_N_POINTS_TOO_LOW)
-        ルーター層で HTTPException(status_code=422) に変換される.
-
-    推奨保守値:
-        recommended_shelf_life_months は 95% CI 下限 (sl_lo95)。
-        ICH Q1E §2.6 が「lower one-sided 95 percent confidence limit」を
-        含量低下属性の保守的推定として規定するのと整合する (ICH Q1E は
-        頻度論的回帰を主に想定するが、本実装は §B.2.2.2 "Other methods" の
-        枠組で扱う Bayesian 拡張)。
-
-    Prior 設計について:
-        Prior 設計は Faya et al. (Stat Med. 2018; 37(17):2599-2615) および
-        Chau et al. (AAPS PharmSciTech. 2023; 24(8):250) の概念フレームワーク
-        ─ 加速試験・歴史的データの結果を長期予測の Prior に組み込む
-        経験ベイズ的アプローチ ─ に整合する (本文未取得、抄録レベルの整合)。
-
-        引数 `prior_ea_sd_kj` は Ea の真の標準偏差 (= アレニウス回帰の OLS で
-        推定された Ea の標準誤差 SE そのもの) として受け取り、L637 の
-        delta 法計算で σ_Ea として直接消費する:
-
-            σ_Ea_contrib = |Δ(1/T)| × 1000 / R × prior_ea_sd_kj
-                         = |∂(ln k_pred)/∂Ea| × σ_Ea
-
-        この設計は B1.5 検証 (`docs/audit/b1_5_split_determination.md`,
-        commit 0f29271) で独立確認済。出力 95% CI は SL の対数空間で
-        ±1.960 × σ_lnk_total として構築され (L646-649)、ICH Q1E §2.6
-        "lower one-sided 95 percent confidence limit" と整合する。
-
-        感度分析結果は tests/test_bayesian_stability.py::test_prior_sd_sensitivity
-        を参照 (SE × {1.0, 1.96, 2.5} の SL_lo95 単調性検証)。
-    """
-    warnings_list: List[Dict] = []
-
-    # ── B4: PQ_N_POINTS_TOO_LOW(単温度モード、Phase B4)──────────────
-    if len(times_days) != len(contents):
-        raise ValueError("times_days と contents の長さが一致しません")
-    n_pts_single = len(times_days)
-    if n_pts_single <= PQ_N_POINTS_HARD_FAIL_MAX:
-        raise StabilityHardFailWarning(
-            code="PQ_N_POINTS_TOO_LOW",
-            message=(
-                f"PQ データ点数が {n_pts_single} 点と少なすぎます"
-                f"(最低 {PQ_N_POINTS_HARD_FAIL_MAX + 1} 点必要)。"
-                "OLS の標準誤差が縮退し、偽の確実性につながります。"
-            ),
-            detail={
-                "n_points": n_pts_single,
-                "min_required": PQ_N_POINTS_HARD_FAIL_MAX + 1,
-            },
-        )
-    if n_pts_single <= PQ_N_POINTS_WARN_MAX:
-        warnings_list.append(_warning(
-            code="PQ_N_POINTS_TOO_LOW",
-            level="warning",
-            message=(
-                f"PQ データ点数が {n_pts_single} 点です。"
-                "傾きの推定誤差が大きい可能性があり(信頼区間が広がります)、"
-                "可能であれば 4 点以上を推奨します。"
-            ),
-            n_points=n_pts_single,
-            recommended_min=PQ_N_POINTS_WARN_MAX + 1,
-        ))
-
-    # A8: 単温度モード常時警告(L4.5、prior 依存性が高い)
-    warnings_list.append(_warning(
-        code="SINGLE_TEMP_PRIOR_DEPENDENCY",
-        level="info",
-        message=(
-            "単温度モードは事前分布(prior)の選択に強く依存します"
-            "(L4.5 検証: 同データで prior SD=5 → SL=43.4、SD=30 → SL=13.6)。"
-            "事前分布の根拠を慎重に設定してください。"
-            "可能であれば多温度モードの使用を推奨します。"
-        ),
-        prior_ea_kj=prior_ea_kj,
-        prior_ea_sd_kj=prior_ea_sd_kj,
-    ))
-
-    # A6: Ea 事前範囲チェック(物理的妥当範囲、L3.5.3)
-    if prior_ea_kj < EA_PRIOR_RANGE_MIN_KJ or prior_ea_kj > EA_PRIOR_RANGE_MAX_KJ:
-        warnings_list.append(_warning(
-            code="UNUSUAL_PRIOR_EA",
-            level="warning",
-            message=(
-                f"指定された事前 Ea = {prior_ea_kj} kJ/mol が典型医薬品の範囲"
-                f"({EA_PRIOR_RANGE_MIN_KJ:.0f}-{EA_PRIOR_RANGE_MAX_KJ:.0f} kJ/mol)から"
-                "外れています。設定意図をご確認ください。"
-            ),
-            prior_ea_kj=prior_ea_kj,
-            range_min=EA_PRIOR_RANGE_MIN_KJ,
-            range_max=EA_PRIOR_RANGE_MAX_KJ,
-        ))
-
-    t = np.array(times_days, dtype=float)
-    C = np.array(contents, dtype=float)
-
-    c0_eff = float(C[int(np.argmin(t))]) if float(t[int(np.argmin(t))]) == 0.0 else c0
-    y = np.log(C / c0_eff)
-
-    slope, _, r_val, _, se_slope = stats.linregress(t, y)
-    k_acc = float(-slope)
-    se_k_acc = float(se_slope)
-    r2 = float(r_val ** 2)
-
-    # ── A4: k_acc ≤ 0 の silent 置換をフラグ化(多温度 K_HAT_ZERO_FALLBACK と対称)──
-    # 単温度では加速条件の ln(C) vs t 一次回帰の傾きから k_acc を推定する。
-    # Significant degradation 不在(平坦・増加データ)では k_acc ≤ 0 となり、
-    # 従来は np.log(k_acc) が nan/-inf を生み、レスポンス描画時(allow_nan=False)
-    # に 500 化していた(2026-05-25 障害)。多温度モードと同じく 1e-7 へ
-    # フォールバックして警告化する(有効期間は 120 ヶ月キャップに収束)。
-    k_zero_fallback = False
-    if (not math.isfinite(k_acc)) or k_acc <= 0:
-        k_acc = 1e-7
-        se_k_acc = 1e-7
-        k_zero_fallback = True
-        warnings_list.append(_warning(
-            code="K_HAT_ZERO_FALLBACK",
-            level="warning",
-            message=(
-                f"加速温度 {temp_c}°C で有意な分解が観察されませんでした"
-                "(k ≤ 0 または推定不能)。Significant degradation 不在のため"
-                "単温度ベイジアン外挿の前提を満たしていません。"
-                "ICH Q1E §B.1 古典手法をご検討ください。"
-            ),
-            acc_temp_c=temp_c,
-        ))
-
-    # ── A5: 一次反応速度フィットの直線性が低い場合の警告 ─────────────────
-    # 単温度モードに Arrhenius プロットは存在しない(温度水準が 1 点のため)。
-    # ここで評価するのは加速条件の ln(C) vs t 一次回帰の R²(= 一次分解モデルの
-    # 妥当性)であり、アレニウス直線性とは別物。CLAUDE.md「命名は仕様」ルールに
-    # 従い LOW_R_SQUARED_ARRHENIUS ではなく LOW_R_SQUARED_KINETIC_FIT とする。
-    # 閾値は多温度の直線性閾値(R_SQUARED_ARRHENIUS_WARN = 0.9)を流用。
-    if math.isfinite(r2) and not k_zero_fallback and r2 < R_SQUARED_ARRHENIUS_WARN:
-        warnings_list.append(_warning(
-            code="LOW_R_SQUARED_KINETIC_FIT",
-            level="warning",
-            message=(
-                f"加速条件の一次反応フィットの直線性が低い(R² = {r2:.3f})。"
-                "一次分解モデルの妥当性が低く、外挿の信頼性が下がる可能性があります。"
-                "観測点の追加や反応次数の再検討をご検討ください。"
-            ),
-            r_squared=round(r2, 4),
-            threshold=R_SQUARED_ARRHENIUS_WARN,
-        ))
-
-    R_gas = R_GAS
-    T_acc = temp_c + 273.15
-    T_pred = pred_temp_c + 273.15
-    delta_inv_T = 1.0 / T_pred - 1.0 / T_acc
-
-    ln_k_pred = np.log(k_acc) - prior_ea_kj * 1000.0 / R_gas * delta_inv_T
-    k_pred = float(np.exp(ln_k_pred))
-
-    sigma_lnk_acc = abs(se_k_acc / k_acc) if k_acc > 0 else 0.0
-    sigma_ea_contrib = abs(delta_inv_T) * 1000.0 / R_gas * prior_ea_sd_kj
-    sigma_lnk_total = float(np.sqrt(sigma_lnk_acc ** 2 + sigma_ea_contrib ** 2))
-
-    # 加速係数: k_acc / k_pred = exp(Ea/R * delta_inv_T)  (T_acc > T_pred のとき > 1)
-    acc_factor = float(np.exp(prior_ea_kj * 1000.0 / R_gas * delta_inv_T))
-
-    def shelf_life_months(k: float) -> float:
-        return -np.log(spec_lower / c0_eff) / k / 30.44
-
-    z95 = 1.960
-    sl_mean = shelf_life_months(k_pred)
-    sl_lo95 = sl_mean * np.exp(-z95 * sigma_lnk_total)
-    sl_hi95 = sl_mean * np.exp(+z95 * sigma_lnk_total)
-
-    # A7: 120 ヶ月キャップ到達フラグ(L3.5.3 / L4.7)
-    # bool()/float() で numpy 型を Python 組込み型へ確定変換する。
-    # np.bool_ は FastAPI の JSONResponse(allow_nan=False)でシリアライズ
-    # 不可のため、これを怠ると全リクエストが 500 化する(2026-05-25 障害)。
-    capped = bool(sl_lo95 >= SHELF_LIFE_CAP_MONTHS)
-    sl_lo95_reported = float(min(sl_lo95, SHELF_LIFE_CAP_MONTHS))
-    if capped:
-        warnings_list.append(_warning(
-            code="SHELF_LIFE_CAPPED",
-            level="info",
-            message=(
-                f"外挿が {SHELF_LIFE_CAP_MONTHS:.0f} ヶ月キャップに到達しました。"
-                "実用上は『有効期間 120 ヶ月以上』と解釈してください。"
-                "データの分解傾向が弱く、Significant degradation の前提を満たさない可能性があります。"
-            ),
-            cap_months=SHELF_LIFE_CAP_MONTHS,
-        ))
-
-    # 返却前に numpy 型を Python float/bool へ確定変換する(原因A の再発防止)。
-    # (cmc-platform 本番ではルーター層の _sanitize_response が nan/inf 最終防御を
-    #  担うが、その serialization glue は本 vendored コピーには含めない。)
-    return {
-        "shelf_life_mean_months": float(round(sl_mean, 1)),
-        "shelf_life_lo95_months": float(round(sl_lo95_reported, 1)),
-        "shelf_life_hi95_months": float(round(min(sl_hi95, SHELF_LIFE_CAP_MONTHS), 1)),
-        "recommended_shelf_life_months": float(round(sl_lo95_reported, 1)),
-        "capped": capped,
-        "k_zero_fallback": k_zero_fallback,
-        "k_acc": float(round(k_acc, 6)),
-        "k_pred": float(round(k_pred, 8)),
-        "r2_acc": float(round(r2, 4)),
-        "acc_factor": float(round(acc_factor, 2)),
-        "acc_equiv_months": float(round(float(max(t)) / 30.44 * acc_factor, 1)),
-        "sigma_lnk_acc": float(round(sigma_lnk_acc, 4)),
-        "sigma_ea_contrib": float(round(sigma_ea_contrib, 4)),
-        "sigma_lnk_total": float(round(sigma_lnk_total, 4)),
-        "pred_temp_c": pred_temp_c,
-        "acc_temp_c": temp_c,
-        "spec_lower": spec_lower,
         "warnings": warnings_list,
     }

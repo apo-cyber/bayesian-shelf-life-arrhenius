@@ -25,7 +25,7 @@ ESTIMATOR_COLORS = {
 }
 
 
-def faya_fig_4_5_draft(
+def fig_t90_estimates_by_cell(
     results_by_estimator: dict[str, list[dict]],
     truth_by_case: dict[str, dict],
     *,
@@ -158,7 +158,7 @@ def faya_fig_4_5_draft(
     ax.legend(handles=handles, loc="upper right", fontsize=8, ncol=1)
 
     if output_path is None:
-        output_path = Path("paper_a/figures") / "fig_4_5_draft.png"
+        output_path = Path("paper_a/figures") / "fig_t90_estimates_by_cell.png"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fig.tight_layout()
     fig.savefig(output_path, dpi=150, bbox_inches="tight")
@@ -179,7 +179,7 @@ def fig_zoom_core_cell(
     cells = [(n_t, p) for p in ("accurate", "moderate", "strong")]
     if output_path is None:
         output_path = Path("paper_a/figures") / f"fig_zoom_n_t_{n_t}.png"
-    return faya_fig_4_5_draft(
+    return fig_t90_estimates_by_cell(
         results_by_estimator=results_by_estimator,
         truth_by_case=truth_by_case,
         cells=cells,

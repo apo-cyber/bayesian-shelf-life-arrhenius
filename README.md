@@ -95,6 +95,14 @@ bottleneck**: it runs **100 replicates/case** (10,100 NUTS fits) and takes
 only overnight step; Steps 1, 3, 4 are fast. Use `--skip-mcmc` on
 `run_paper_a` to exercise the three fast estimators alone.
 
+## Figures ↔ manuscript
+
+| Repository file | Manuscript | Content |
+|---|---|---|
+| `paper_a/figures/fig_t90_estimates_by_cell.png` | Figure 1 | t90 point-estimate distributions (median / IQR / range), 4 estimators × 9 core cells (n_T × prior accuracy), true t90 reference line |
+| `paper_a/figures/fig_zoom_n_t_3.png` | Figure 2 | Zoom on the central cells (n_T = 3 × 3 prior levels) |
+| `paper_a/figures/fig_mcmc_nonconvergence.png` | Figure 3 | MCMC non-convergence rate heatmap over core cells (R-hat ≥ 1.01 or ESS < 400) |
+
 ## Data
 
 All synthetic. Two layers (per-case truth in `data/<layer>/truth.json`):
