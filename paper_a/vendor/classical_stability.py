@@ -20,9 +20,6 @@
 として、同一の有効期間問題を完全に異なる手法で解く。Layer 4 監査 L4.8 で
 両者を並列比較した結果、ベイジアンの方が古典より保守的(SL_lo95 が短い)
 であることが確認されている。
-
-参考: docs/audit/l4_8_classical_vs_bayesian_comparison.md
-      docs/audit/classical_ich_q1e_comparison.py (監査用ベンチマーク)
 """
 from typing import List, Dict
 import numpy as np

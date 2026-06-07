@@ -57,7 +57,7 @@ def test_default_sampler_is_numpyro():
 @pytest.mark.slow
 def test_numpyro_sampler_arg_works_in_pymc():
     """PyMC 5.28.5 で nuts_sampler='numpyro' が引数として受理され、最小 draws で
-    実行が完了することを保証する (mcmc_benchmark.py 既存 API との互換性確認)."""
+    実行が完了することを保証する."""
     rows, truth = _load_case("core", "core_041", 0)
     result = mcmc_estimate(
         rows,

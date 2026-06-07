@@ -16,14 +16,11 @@
 """
 ベイズアレニウス安定性予測（MCMC不要・解析的近似）
 
-監査ステータス: Layer 1-5 検証済(2026-05-12 完遂)
-詳細は docs/audit/audit_final_report.md(監査総括レポート)を参照
+監査ステータス: Layer 1-5 検証済(2026-05-12 完遂、監査記録は著者の
+private cmc-platform プロジェクトに保持)
 
-主要参照ドキュメント:
+主要参照:
 - ICH Q1E (2003) §B.2.2.2 "Other methods" framework
-- MCMC ベンチマーク: docs/audit/l3_benchmark_results.md
-- 古典 ICH §B.1 比較: docs/audit/l4_8_classical_vs_bayesian_comparison.md
-- ICH Q1E 整合: docs/audit/bayesian-multi-temp-icq1e-alignment.md
 
 モデル:
     C(t, T) = C₀ × exp(-k(T) × t)      （一次分解）
@@ -49,7 +46,6 @@ from typing import List, Dict, Optional
 R_GAS = 8.314  # J/(mol·K)
 
 # ── 警告閾値定数(Layer 5 監査由来)──────────────────────────────────────
-# 詳細は docs/audit/layer5_handover_list.md 参照
 N_CONDS_RECOMMENDED = 5       # 信頼区間精度の推奨下限(L3.4a)
 N_CONDS_MINIMUM = 3            # 計算実行の最低基準(L3.5.1、< 3 で ValueError)
 SE_K_RATIO_WARN = 0.15         # delta 法警告閾値(L3.4b、誤差 ~5%)
@@ -59,7 +55,6 @@ EA_PRIOR_RANGE_MAX_KJ = 120.0  # 同上限
 SHELF_LIFE_CAP_MONTHS = 120.0  # 120 ヶ月キャップ(_cap デフォルトと整合)
 
 # ── B4 警告閾値(Phase B4 由来)─────────────────────────────────────────
-# 詳細は docs/audit/audit_final_report.md §13 参照
 PQ_N_POINTS_HARD_FAIL_MAX = 2   # この値以下で OLS SE が縮退し sigma_acc=0 → 422
 PQ_N_POINTS_WARN_MAX = 3        # この値以下(かつ Hard fail 域外)で警告
 PRIOR_INCONSISTENCY_HARD_FAIL_P = 0.01  # 両側 Bayesian p-value がこれ未満で 422
@@ -167,25 +162,14 @@ def run_bayesian_stability(
     位置づけられている (§B.2.2.2 の literal 文脈は batch poolability 代替手段
     だが、本実装は §B.2.2.2 末尾「Statistical procedures other than those
     described above can be used」を Bayesian Arrhenius 拡張の根拠としている)。
-    Layer 1 (数学モデル) 〜 Layer 6 (監査クローズ) の系統的監査を完了している。
-    監査透明性のため、関連ドキュメントを以下に列挙する:
+    Layer 1 (数学モデル) 〜 Layer 6 (監査クローズ) の系統的監査を完了している
+    (監査記録は著者の private cmc-platform プロジェクトに保持)。主要な検証
+    結果を以下に要約する:
 
-    - 監査計画 / チェックリスト:
-      docs/audit/bayesian-multi-temp-audit-plan.md
-    - ICH Q1E 整合性メモ:
-      docs/audit/bayesian-multi-temp-icq1e-alignment.md
-    - Layer 3 中間まとめ (MCMC ベンチマーク結果 + 古典 ICH §B 検討の起点):
-      docs/audit/layer3_interim_summary.md
-    - L3.4 ベンチマーク (正規近似 / delta 法 / MCMC vs 2 段階):
-      docs/audit/l3_benchmark_results.md
-    - L4.8 古典 ICH §B.1 比較 (先行検証、本手法は古典より約 15% 保守的):
-      docs/audit/l4_8_classical_vs_bayesian_comparison.md
-    - B3 4 者比較 (Z/t/MCMC/古典、§B.1/§2.6 原文確認済、古典との差 +17.9%):
-      docs/audit/layer4_classical_ich_comparison.md
-    - Layer 5 引き継ぎリスト (UI 警告 8 項目、Step 5a で実装済):
-      docs/audit/layer5_handover_list.md
-    - 監査総括 (Layer 1-6):
-      docs/audit/audit_final_report.md §13 (B4), §14 (B3), §15 (Layer 1-6 総括)
+    - L3.4 ベンチマーク: 正規近似 / delta 法 / MCMC vs 2 段階を比較。
+    - L4.8 古典 ICH §B.1 比較: 本手法は古典より約 15% 保守的。
+    - B3 4 者比較 (Z/t/MCMC/古典、§B.1/§2.6 原文確認済): 古典との差 +17.9%。
+    - Layer 5: UI 警告 8 項目を実装済。
 
     既知の制約と Layer 5/B4 で実装した対処:
 
@@ -264,20 +248,16 @@ def run_bayesian_stability(
              事後を t 分布として扱うべきだが、本実装は σ² を SS_res/df の
              plug-in 値として正規近似で打ち切る。
            - 結果として事後信頼区間は (特に n_conds が小さい場合) 楽観的
-             (過小評価) 傾向。L3.4 で定量化済 (差 < 5%、l3_benchmark_results.md
-             §4.2 / B2b L52, L64)。Z 値 ≈ MCMC が確定 (B2b 多温度、B2a 単温度)。
-           - 規制的位置づけは ICH Q1E §B.2.2.2 "Other methods" 枠で扱い、
-             詳細は docs/audit/bayesian-multi-temp-icq1e-alignment.md 参照。
+             (過小評価) 傾向。L3.4 で定量化済 (差 < 5%)。
+             Z 値 ≈ MCMC が確定 (B2b 多温度、B2a 単温度)。
+           - 規制的位置づけは ICH Q1E §B.2.2.2 "Other methods" 枠で扱う。
 
     参照:
         - 単一温度モードは Faya 2018 / Chau 2023 の概念フレームと整合
           (本文未取得につき抄録レベル)、ICH Q1E §B.2.2.2 "Other methods" 枠で扱う
-        - 多温度モード Layer 1-2 監査:
-          docs/audit/bayesian-multi-temp-audit-plan.md
-        - ICH Q1E 整合性メモ:
-          docs/audit/bayesian-multi-temp-icq1e-alignment.md
-        - Layer 3 (誤差伝播の定量化), Layer 4 (古典 §B.1 比較), Layer 5 (UI
-          統合), Layer 6 (監査クローズ) はすべて 2026-05-16 までに完了
+        - 多温度モード Layer 1-2 監査、ICH Q1E 整合性確認、および Layer 3
+          (誤差伝播の定量化), Layer 4 (古典 §B.1 比較), Layer 5 (UI 統合),
+          Layer 6 (監査クローズ) はすべて 2026-05-16 までに完了
     """
     if storage_temps is None:
         storage_temps = [25.0, 30.0]
@@ -297,7 +277,7 @@ def run_bayesian_stability(
         raise ValueError(
             f"多温度ベイジアン解析には最低 {N_CONDS_MINIMUM} 温度のデータが必要です。"
             f"現在 {len(temp_groups)} 温度。"
-            "温度水準が少ないと信頼区間が過度に楽観化されます(参照: docs/audit/layer3_interim_summary.md)。"
+            "温度水準が少ないと信頼区間が過度に楽観化されます。"
         )
 
     # ── B4: PQ_N_POINTS_TOO_LOW(温度条件別、Phase B4)────────────────

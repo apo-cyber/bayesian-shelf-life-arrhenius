@@ -56,7 +56,7 @@ PRIOR_DEVIATION_KJ = {
 PRIOR_SD_KJ_DEFAULT = 30.0
 
 # ノイズレベル (log 空間 ln(C/C0) ガウス SD).
-# 中=0.02 は audit/mcmc_benchmark.py SIGMA_OBS と整合.
+# 中=0.02 は cmc-platform ベンチマークの SIGMA_OBS と整合.
 NOISE_SIGMA = {
     "small": 0.01,
     "medium": 0.02,

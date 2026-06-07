@@ -1,7 +1,10 @@
-"""推定器 #2: Full Bayesian MCMC (`docs/audit/mcmc_benchmark.py::run_mcmc` を lift).
+"""推定器 #2: Full Bayesian MCMC.
+
+このモデルは著者の private cmc-platform プロジェクトの MCMC ベンチマーク
+(run_mcmc) に由来し、MIT デュアルライセンスで本パッケージに収録する.
 
 実装方針:
-    既存 audit スクリプトの run_mcmc を analysis 配下に lift し、prior を
+    由来元の run_mcmc を analysis 配下に移植し、prior を
     関数引数で露出させ、spec_lower を露出させ、seed を生成器整合で受ける.
     モデル構造 (ln_A ~ N(20, 100), Ea ~ N(prior, sd), sigma_obs ~ HalfNormal(0.1))
     は変更しない (cmc-platform の Bayesian 安定性監査結果を継承).
@@ -64,7 +67,7 @@ T_25K = 298.15
 
 ESTIMATOR_NAME = "mcmc"
 
-# MCMC NUTS 設定 (mcmc_benchmark.py 既存値と整合)
+# MCMC NUTS 設定 (cmc-platform ベンチマーク既存値と整合)
 DEFAULT_DRAWS = 2000
 DEFAULT_TUNE = 1000
 DEFAULT_CHAINS = 4

@@ -35,7 +35,7 @@ def test_seed_determinism():
 
 
 def test_t0_has_noise_with_correct_scale():
-    """t=0 にも測定誤差がのる (mcmc_benchmark.py パターンと整合).
+    """t=0 にも測定誤差がのる.
     分布は log 空間ガウスで、初期含量近傍に集中するべき."""
     scenario = next(s for s in CORE_SCENARIOS if s["case_id"] == "core_001")
     result = generate_case(scenario, n_replicates=200)

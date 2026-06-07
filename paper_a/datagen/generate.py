@@ -86,7 +86,7 @@ def _add_noise(
 ) -> np.ndarray:
     """log 空間ガウスノイズ: ln(C_obs/C0) = ln(C_true/C0) + N(0, sigma).
 
-    t=0 を含む全点に独立に乗せる(`docs/audit/mcmc_benchmark.py` の合成データ
+    t=0 を含む全点に独立に乗せる(cmc-platform ベンチマークの合成データ
     生成パターンと整合.実測の t=0 もアッセイ誤差を含むため).
     C_true ≤ 0 は 0 にクリップ.
     """
