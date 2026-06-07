@@ -1,4 +1,4 @@
-"""既存 parquet から再集計・図再生成 (MCMC 再走行なし、D.3 追加要求 b 反映時用).
+"""既存 parquet から再集計・図再生成 (MCMC 再走行なし、追加要求 b 反映時用).
 
 estimator_results.parquet をロード → metrics.py / aggregation.py / figures.py で
 再計算 → cell_metrics.json + 図 3 枚を上書き.

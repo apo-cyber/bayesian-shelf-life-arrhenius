@@ -2,16 +2,15 @@
 
 実装方針:
     `run_bayesian_stability` を spec_lower=90.0, storage_temps=[25.0] で呼び、
-    storage_results[0] (=25°C) から t90 を抽出する.再実装禁止 (前セッション
-    確定、再開プロンプト A.2).
+    storage_results[0] (=25°C) から t90 を抽出する.再実装禁止.
 
-n_T<3 失敗扱い (再開プロンプト判断 2):
+n_T<3 失敗扱い:
     cmc-platform は ValueError("最低 3 温度") を投げる (規制 hard fail).
     Wrapper はこれを捕捉して `converged=False, error_code="N_CONDS_TOO_LOW"`
     として記録する.これが論文の知見になる:
     「n_T=2 cell では 2 段 OLS/共役回帰は規制上適用不可、MCMC は動く」
 
-case 別 prior (再開プロンプト判断 3):
+case 別 prior:
     truth.json の `prior_ea_kj_mol` / `prior_ea_sd_kj_mol` を関数引数で受け、
     accurate/moderate/strong の 3 軸で生成器の設定を解析にそのまま反映する.
     生成器と解析の prior 値乖離を防ぐため `test_prior_parity` で保証.

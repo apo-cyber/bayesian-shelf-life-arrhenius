@@ -1,6 +1,6 @@
 """metrics.py の必須テスト.
 
-追加要求 (b、前停止点判断時の指示):
+追加要求 (b):
     bias = t90_estimate − t90_true_25c_months を厳守.
     target_sl_at_25c_months (=入力値 30 月) を間違って参照しないこと.
     生成器側 kinetics-aware 較正バグと同パターンの取り違え防止.

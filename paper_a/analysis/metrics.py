@@ -1,7 +1,7 @@
-"""3 指標 (仕様書 §4): バイアス・ばらつき / posterior predictive 失敗率 /
+"""3 指標: バイアス・ばらつき / posterior predictive 失敗率 /
 カバレッジ確率.補助: CI 上限 > 120 月の発生率 (追加要求 a).
 
-**真値ソース** (仕様書 §B.1、追加要求 b で厳守):
+**真値ソース** (追加要求 b で厳守):
     主指標は **t90_true_25c_months** ベース.target_sl_at_25c_months
     (入力値 30 月) を真値として使ってはならない.両者は kinetics が 1 次以外
     のとき桁違いに異なる (生成器側 kinetics-aware 較正バグと同パターンの
@@ -15,7 +15,7 @@ from typing import Iterable
 
 import numpy as np
 
-# 可視化 cap (前停止点判断 2): cmc-platform `_cap` と整合.
+# 可視化 cap: cmc-platform `_cap` と整合.
 SHELF_LIFE_CAP_MONTHS = 120.0
 
 
@@ -23,7 +23,7 @@ SHELF_LIFE_CAP_MONTHS = 120.0
 class CellMetrics:
     """1 集計セル × 1 推定器の指標群.
 
-    bias_sd は 3 種類報告する (D.3 追加要求 b):
+    bias_sd は 3 種類報告する (追加要求 b):
     - bias_sd_raw: 全推定成功 rep (error_code is None) で raw 値.外れ値で inf になりうる.
     - bias_sd_capped120: t90 推定値を 120 ヶ月に cap してから bias 計算.主指標.
     - bias_sd_converged_only: converged=True に絞る.MCMC の「収束した時の精度」用補助.
@@ -49,7 +49,7 @@ class CellMetrics:
 
     # PP 失敗率 (Faya 2018 §4.2.2.2 表記):
     # P(t_label ≤ t90_true) = 「ラベル ≤ 真値」.
-    # 解釈 (再開プロンプト B.1 で確認): ここでは "ラベル" = 点推定 t90.
+    # 解釈: ここでは "ラベル" = 点推定 t90.
     # 失敗 = 「ラベルが真値を超える」=「t_label > t90_true」=「楽観バイアス」.
     # よって本指標は「P(t_label > t90_true)」を計算する (= 楽観失敗率).
     pp_failure_rate: float | None
@@ -78,13 +78,13 @@ def compute_cell_metrics(
     Parameters
     ----------
     truth_field : str
-        真値フィールド名.デフォルトは仕様書 §B.1 主指標.
+        真値フィールド名.デフォルトは主指標 (t90_true).
         誤って "target_sl_at_25c_months" を渡さないよう test_metrics で保証.
 
     Notes
     -----
     SHELF_LIFE_CAP_MONTHS による cap は cap 発生率の集計にのみ使い、
-    bias/variance の生計算には raw 値を保持する (前停止点判断 2: 可視化と
+    bias/variance の生計算には raw 値を保持する (可視化と
     数値の 2 通り).
     """
     results_list = list(results)

@@ -1,6 +1,6 @@
 """エンドツーエンド解析 orchestration.
 
-設計上の非対称性 (前停止点判断、案 B):
+設計上の非対称性 (案 B):
     - classical_ols_multi_temp / classical_ich_q1e / two_stage_conjugate:
       1000 reps/case (合成データ全反復).
     - mcmc: 100 reps/case (計算コスト上、Faya 2018 並み).
@@ -209,7 +209,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     print(f"→ {fig_path}")
 
-    # 拡大図: n_T=3 × Prior 3 水準 (D.3 追加要求 a、核心 cell)
+    # 拡大図: n_T=3 × Prior 3 水準 (追加要求 a、核心 cell)
     zoom_path = fig_zoom_core_cell(
         results_by_estimator=all_results,
         truth_by_case=all_truth,
@@ -218,7 +218,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     print(f"→ {zoom_path}")
 
-    # MCMC 非収束率ヒートマップ (D.3 追加要求 a、論文 Figure 3 候補)
+    # MCMC 非収束率ヒートマップ (追加要求 a、論文 Figure 3 候補)
     heatmap_path = fig_mcmc_nonconvergence_heatmap(
         metrics_by_slice,
         output_path=FIGURES_DIR / "fig_mcmc_nonconvergence.png",

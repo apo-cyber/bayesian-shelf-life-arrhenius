@@ -1,13 +1,12 @@
-"""EstimatorResult 共通契約 (仕様書 §B、再開プロンプト Q1〜Q3 + 事前調査).
+"""EstimatorResult 共通契約.
 
 論文中・コードの呼称は ESTIMATOR_NAMES で固定.Methods / Results / 図凡例で
-表記揺れを起こさないこと (前セッション §3.3.1 教訓).
+表記揺れを起こさないこと.
 
 全推定器は spec_lower=90.0 (t90 = content 90% 到達時間) を主指標として算出する.
 これにより truth.json の `t90_true_25c_months` (Faya Fig 8 整合) と直接
 バイアス比較が成立する.補助で spec_lower=95.0 も走らせる場合は
-`spec_lower_used` フィールドで識別、デフォルト集計・図は 90.0 のみ参照する
-(再開プロンプト §B.4 判断点 4).
+`spec_lower_used` フィールドで識別、デフォルト集計・図は 90.0 のみ参照する.
 """
 from __future__ import annotations
 
@@ -30,7 +29,7 @@ class EstimatorResult:
     Notes
     -----
     - 主指標は t90 (content 90% 到達時間).評価は truth.json の
-      `t90_true_25c_months` に対して行う (再開プロンプト §B.1).
+      `t90_true_25c_months` に対して行う.
     - error_code:
       * "N_CONDS_TOO_LOW": cmc-platform `run_bayesian_stability` が n_T<3 で
         ValueError を出した場合 (規制 hard fail).two_stage_conjugate で発生.

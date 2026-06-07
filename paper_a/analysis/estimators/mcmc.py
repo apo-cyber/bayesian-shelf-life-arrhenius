@@ -6,7 +6,7 @@
     モデル構造 (ln_A ~ N(20, 100), Ea ~ N(prior, sd), sigma_obs ~ HalfNormal(0.1))
     は変更しない (cmc-platform の Bayesian 安定性監査結果を継承).
 
-収束判定 (再開プロンプト B.3):
+収束判定:
     R-hat < 1.01 かつ ESS > 400 で converged=True、それ以外で converged=False
     + error_code="MCMC_NOT_CONVERGED".
 
@@ -17,7 +17,7 @@ case 別 prior (判断 3) + seed (追加要求):
     単体テストを追加 (test_mcmc.py::test_mcmc_seed_reproducibility).
 
 ================================================================
-Methods 節素材 (論文・confirmed_parameters.md 双方で参照)
+Methods 節素材 (論文で参照)
 ================================================================
 
 サンプラー詳細:
@@ -74,7 +74,7 @@ DEFAULT_TARGET_ACCEPT = 0.95
 # fallback で "default" (PyMC C backend) も指定可能.
 DEFAULT_NUTS_SAMPLER = "numpyro"
 
-# 収束閾値 (再開プロンプト B.3)
+# 収束閾値
 RHAT_THRESHOLD = 1.01
 ESS_THRESHOLD = 400.0
 
@@ -213,7 +213,7 @@ def estimate(
     log_ratio = -np.log(spec_lower / initial_content)
     t90_samples = log_ratio / k_target
 
-    # cmc-platform 整合: 120 月 cap は raw posterior には適用しない (前停止点判断 2).
+    # cmc-platform 整合: 120 月 cap は raw posterior には適用しない.
     t90_point = float(np.mean(t90_samples))
     t90_lo = float(np.percentile(t90_samples, 2.5))
     t90_hi = float(np.percentile(t90_samples, 97.5))

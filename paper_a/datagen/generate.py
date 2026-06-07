@@ -29,7 +29,7 @@ from .temperature import (
     solve_true_sl,
 )
 
-DATA_CLASS_TAG = "synthetic"  # 研究公正性 §10.3: 合成データ明示ラベル
+DATA_CLASS_TAG = "synthetic"  # 研究公正性: 合成データ明示ラベル
 
 
 def _make_rng(case_id: str, replicate_id: int) -> np.random.Generator:
@@ -177,7 +177,7 @@ def generate_case(scenario: ScenarioSpec, n_replicates: int) -> dict:
     速度論種別ごとに k_25 を `target_sl_at_25c_months` から逆算 → Arrhenius
     で ln A 確定 → 各加速温度の k_T → 各温度の真 SL/真 t90 を kinetics モデル
     に従って算出.全 kinetics で真 SL = target が成立する(頑健性層のバイアス
-    評価が崩れない).真 t90 (content=90%) は仕様書 §4 主指標 (Faya Fig 8)
+    評価が崩れない).真 t90 (content=90%) は主指標 (Faya Fig 8)
     のための別量として並列に記録する.
 
     Returns
@@ -309,7 +309,7 @@ def generate_case(scenario: ScenarioSpec, n_replicates: int) -> dict:
         "ea_true_kj_mol": ea_true,
         "ln_a_true": ln_a_true,
         "target_sl_at_25c_months": target_sl,
-        # 仕様書 §4 主指標: 真の t90 (content=90% 到達時間) を 25°C と各加速温度で算出.
+        # 主指標: 真の t90 (content=90% 到達時間) を 25°C と各加速温度で算出.
         # 推定器バイアス評価はこの値を基準に行う (Faya 2018 Fig 8 と整合).
         "t90_true_25c_months": t90_true_25c,
         "t90_true_by_temp_months": t90_true_by_temp,

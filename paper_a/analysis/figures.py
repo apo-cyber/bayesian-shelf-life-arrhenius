@@ -1,10 +1,10 @@
-"""t90 推定値分布図 (仕様書 §4 主指標、Faya 2018 Fig 8 と同形式).
+"""t90 推定値分布図 (主指標、Faya 2018 Fig 8 と同形式).
 
 横軸: cell 群 (例: n_T 別 × Prior 別).
 縦軸: t90 推定値の 95% 区間 (CI cap=120 月で打ち切り表示).
 4 推定器を色分け.真 t90 を水平線で表示.
 
-cap (前停止点判断 2): 可視化のみ raw → 120 月で打ち切り、数値は raw 保持.
+cap: 可視化のみ raw → 120 月で打ち切り、数値は raw 保持.
 """
 from __future__ import annotations
 
@@ -174,7 +174,7 @@ def fig_zoom_core_cell(
     truth_field: str = "t90_true_25c_months",
     output_path: Path | None = None,
 ) -> Path:
-    """核心 cell (n_T 固定 × Prior 3 水準) の拡大図.D.3 追加要求 (a)."""
+    """核心 cell (n_T 固定 × Prior 3 水準) の拡大図.追加要求 (a)."""
     cells = [(n_t, p) for p in ("accurate", "moderate", "strong")]
     if output_path is None:
         output_path = Path("paper_a/figures") / f"fig_zoom_n_t_{n_t}.png"
@@ -192,7 +192,7 @@ def fig_mcmc_nonconvergence_heatmap(
     metrics_by_slice: dict,
     output_path: Path | None = None,
 ) -> Path:
-    """MCMC 非収束率の n_T × Prior ヒートマップ (D.3 追加要求 a、論文 Figure 3 候補).
+    """MCMC 非収束率の n_T × Prior ヒートマップ (追加要求 a、論文 Figure 3 候補).
 
     Faya 2018 が報告していない独立した新規貢献の可視化.
     """

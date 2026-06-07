@@ -1,6 +1,6 @@
 """Faya 2018 博士論文 Table 4.2 の 4 design point 真部分集合性テスト.
 
-仕様: README.md「Data」セクション / paper_a/docs/confirmed_parameters.md
+仕様: README.md「Data」セクション
 
 中核 81 シナリオが Faya の (E, σ) 2×2 設計を包含することを保証する.
 本テストは「対応する Ea と noise の組み合わせが core シナリオに存在する」
@@ -55,7 +55,7 @@ def test_faya_4_design_points_have_matching_core_cells():
 
 
 def test_core_81_count_and_robustness_20_count():
-    """中核 81 + 頑健性 20 のカードカウントを保証する (仕様 §2.1)."""
+    """中核 81 + 頑健性 20 のカードカウントを保証する."""
     from paper_a.datagen.config import ROBUSTNESS_SCENARIOS
 
     assert len(CORE_SCENARIOS) == 81, f"中核は 81 シナリオ.実際 {len(CORE_SCENARIOS)}"

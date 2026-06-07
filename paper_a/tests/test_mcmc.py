@@ -1,6 +1,6 @@
 """MCMC 推定器テスト (numpyro 引数・seed 再現性).
 
-追加要求 (前停止点判断時の指示):
+追加要求:
 - pm.sample(nuts_sampler="numpyro") の引数指定が PyMC 5.28.5 で正しく動作する
 - numpyro backend での seed 再現性 (同 seed で 2 回走らせて bit-identical)
 """

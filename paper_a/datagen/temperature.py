@@ -61,7 +61,7 @@ def calibrate_lna_for_true_sl(
     真値 SL(25°C で真の content が spec_lower に達する時間)が
     target_sl_at_25c_months と一致するように k_25 を kinetics 別に較正する.
     これにより 1 次以外の速度論でも「真値 SL = target」となり、推定器バイアス
-    評価の基準点 (仕様書 §4) が崩れない.
+    評価の基準点が崩れない.
 
     Returns
     -------
