@@ -41,6 +41,10 @@ serialization, verdict/commentary layers, routers, auth/DB) is **not** included.
 This keeps the package fully self-contained — no access to the proprietary
 backend is required.
 
+The full-MCMC estimator (`analysis/estimators/mcmc.py`) also derives from the
+author's MCMC benchmark in the private `cmc-platform` project (MIT
+dual-licensed); see its module docstring.
+
 ## Installation
 
 ```bash
