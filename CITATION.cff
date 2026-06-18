@@ -14,13 +14,9 @@ authors:
   - given-names: Yasushi
     family-names: Arai
     orcid: "https://orcid.org/0009-0005-7300-4234"
-# Software archival DOI (Zenodo). Placeholder until release is archived.
-doi: "10.5281/zenodo.TBD"
+# Software archival DOI (Zenodo).
+doi: "10.5281/zenodo.20576829"
 repository-code: "https://github.com/apo-cyber/bayesian-shelf-life-arrhenius"
-contact:
-  - email: "[TBD-EMAIL]"
-    given-names: Yasushi
-    family-names: Arai
 keywords:
   - pharmaceutical
   - stability
