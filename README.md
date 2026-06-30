@@ -15,8 +15,8 @@ procedure, full MCMC (NUTS), classical multi-temperature OLS, and the ICH Q1E
 long-term baseline — across 81 core cases and 20 robustness cases.
 
 > **The manuscript is not included in this repository.** The paper text is
-> managed separately (in accordance with the publisher agreement) and has been
-> **submitted to *Statistics in Medicine***. This repository contains only the
+> managed separately (in accordance with the publisher agreement) and is
+> **under review at a peer-reviewed journal**. This repository contains only the
 > code and synthetic data needed to reproduce the figures, tables, and metrics.
 
 ## License
@@ -128,7 +128,7 @@ Please cite the software via `CITATION.cff` (archival **Zenodo DOI:
 manuscript:
 
 > Arai, Y. *Bayesian multi-temperature shelf-life prediction extending Faya et
-> al. (2018).* Manuscript submitted to *Statistics in Medicine*.
+> al. (2018).* Manuscript under review at a peer-reviewed journal.
 
 and the work it extends:
 
