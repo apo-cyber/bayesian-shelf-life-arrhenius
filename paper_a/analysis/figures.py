@@ -25,6 +25,24 @@ ESTIMATOR_COLORS = {
 }
 
 
+def _save_png_and_tiff(fig, output_path: Path) -> None:
+    """査読用 PNG (dpi=150, 従来どおり) と、ポータル図アップロード用の
+    300dpi LZW-TIFF (同一 stem の .tiff) を併産する.
+
+    PNG は docx 埋め込みの正本 (内容・dpi 不変). TIFF はカラー図の IFA 要件
+    (300dpi) を満たす production 解像度の姉妹ファイル. 描画内容は両者同一で、
+    cell_metrics.json からの再描画のみ (MCMC 再実行不要)."""
+    fig.savefig(output_path, dpi=150, bbox_inches="tight")
+    tiff_path = output_path.with_suffix(".tiff")
+    fig.savefig(
+        tiff_path,
+        dpi=300,
+        bbox_inches="tight",
+        format="tiff",
+        pil_kwargs={"compression": "tiff_lzw"},
+    )
+
+
 def fig_t90_estimates_by_cell(
     results_by_estimator: dict[str, list[dict]],
     truth_by_case: dict[str, dict],
@@ -33,6 +51,8 @@ def fig_t90_estimates_by_cell(
     cap_months: float = SHELF_LIFE_CAP_MONTHS,
     truth_field: str = "t90_true_25c_months",
     output_path: Path | None = None,
+    ylim: tuple[float, float] | None = None,
+    ylabel: str | None = None,
 ) -> Path:
     """t90 推定値分布図を出力 (Faya 2018 Fig 8 と同形式).
 
@@ -142,8 +162,14 @@ def fig_t90_estimates_by_cell(
 
     ax.set_xticks(cell_x_positions)
     ax.set_xticklabels(cell_labels, fontsize=9)
-    ax.set_ylabel("t90 estimate at 25°C (months, capped at 120 for display)")
-    ax.set_ylim(0, cap_months * 1.05)
+    ax.set_ylabel(
+        ylabel if ylabel is not None
+        else "t90 estimate at 25°C (months, capped at 120 for display)"
+    )
+    if ylim is not None:
+        ax.set_ylim(*ylim)
+    else:
+        ax.set_ylim(0, cap_months * 1.05)
     ax.grid(True, alpha=0.3)
 
     # 凡例: 推定器の色 + 真値線
@@ -160,7 +186,7 @@ def fig_t90_estimates_by_cell(
         output_path = Path("paper_a/figures") / "fig_t90_estimates_by_cell.png"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fig.tight_layout()
-    fig.savefig(output_path, dpi=150, bbox_inches="tight")
+    _save_png_and_tiff(fig, output_path)
     plt.close(fig)
     return output_path
 
@@ -173,8 +199,15 @@ def fig_zoom_core_cell(
     cap_months: float = SHELF_LIFE_CAP_MONTHS,
     truth_field: str = "t90_true_25c_months",
     output_path: Path | None = None,
+    ylim: tuple[float, float] | None = (30, 110),
+    ylabel: str | None = "t90 estimate at 25°C (months)",
 ) -> Path:
-    """核心 cell (n_T 固定 × Prior 3 水準) の拡大図.追加要求 (a)."""
+    """核心 cell (n_T 固定 × Prior 3 水準) の拡大図.追加要求 (a).
+
+    zoom 図は中央コア層 (n_T=3) の差分を見るため y 軸を (30, 110) に拡大表示する.
+    値自体は cap_months で clip 済みであり、mcmc 箱が上端でクリップされるのは
+    zoom の意図どおり (full 図 Figure 1 は cap 全域を表示する).
+    """
     cells = [(n_t, p) for p in ("accurate", "moderate", "strong")]
     if output_path is None:
         output_path = Path("paper_a/figures") / f"fig_zoom_n_t_{n_t}.png"
@@ -185,6 +218,8 @@ def fig_zoom_core_cell(
         cap_months=cap_months,
         truth_field=truth_field,
         output_path=output_path,
+        ylim=ylim,
+        ylabel=ylabel,
     )
 
 
@@ -240,6 +275,6 @@ def fig_mcmc_nonconvergence_heatmap(
         output_path = Path("paper_a/figures") / "fig_mcmc_nonconvergence.png"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fig.tight_layout()
-    fig.savefig(output_path, dpi=150, bbox_inches="tight")
+    _save_png_and_tiff(fig, output_path)
     plt.close(fig)
     return output_path
