@@ -1,0 +1,194 @@
+[
+  {
+    "estimator_name": "two_stage_conjugate",
+    "kinetics": "first_order",
+    "bias_median_variation_pct": 18.367103885072652,
+    "bias_median_by_variant": {
+      "arrhenius": -12.489058199037366,
+      "modified_arrhenius_concave": -11.772391532370765,
+      "modified_arrhenius_convex": -14.122391532370642
+    },
+    "bias_sd_capped120_variation_pct": 24.355114235414018,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 28.14256854118881,
+      "modified_arrhenius_concave": 26.06852895277679,
+      "modified_arrhenius_convex": 33.1617839843852
+    }
+  },
+  {
+    "estimator_name": "two_stage_conjugate",
+    "kinetics": "second_order",
+    "bias_median_variation_pct": 18.660287081339995,
+    "bias_median_by_variant": {
+      "arrhenius": -22.533333333333292,
+      "modified_arrhenius_concave": -21.533333333333353,
+      "modified_arrhenius_convex": -18.63333333333324
+    },
+    "bias_sd_capped120_variation_pct": 31.172554798269513,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 26.102050611997637,
+      "modified_arrhenius_concave": 24.276351431564603,
+      "modified_arrhenius_convex": 32.93312898606004
+    }
+  },
+  {
+    "estimator_name": "two_stage_conjugate",
+    "kinetics": "autocatalytic",
+    "bias_median_variation_pct": 154.18196357816592,
+    "bias_median_by_variant": {
+      "arrhenius": 27.442598486463094,
+      "modified_arrhenius_concave": 45.70926515312975,
+      "modified_arrhenius_convex": 5.359265153129201
+    },
+    "bias_sd_capped120_variation_pct": 26.493894852906358,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 26.245394584035683,
+      "modified_arrhenius_concave": 25.167946185046322,
+      "modified_arrhenius_convex": 32.586195818529816
+    }
+  },
+  {
+    "estimator_name": "two_stage_conjugate",
+    "kinetics": "induction",
+    "bias_median_variation_pct": 23.397222142206687,
+    "bias_median_by_variant": {
+      "arrhenius": 41.80381707673197,
+      "modified_arrhenius_concave": 38.50381707673193,
+      "modified_arrhenius_convex": 48.55381707673202
+    },
+    "bias_sd_capped120_variation_pct": 38.39905890635451,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 20.662238599569523,
+      "modified_arrhenius_concave": 17.80784792012451,
+      "modified_arrhenius_convex": 26.068596947433885
+    }
+  },
+  {
+    "estimator_name": "mcmc",
+    "kinetics": "first_order",
+    "bias_median_variation_pct": 173.8015138499668,
+    "bias_median_by_variant": {
+      "arrhenius": 33.16821107402151,
+      "modified_arrhenius_concave": 6.1608762909039925,
+      "modified_arrhenius_convex": 68.80999982289065
+    },
+    "bias_sd_capped120_variation_pct": 21.412273388027568,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 30.21412525913698,
+      "modified_arrhenius_concave": 27.525623256762724,
+      "modified_arrhenius_convex": 34.0791260730264
+    }
+  },
+  {
+    "estimator_name": "mcmc",
+    "kinetics": "second_order",
+    "bias_median_variation_pct": 245.08125918434396,
+    "bias_median_by_variant": {
+      "arrhenius": 11.486979960271077,
+      "modified_arrhenius_concave": -0.1857552574762984,
+      "modified_arrhenius_convex": 49.418318099339416
+    },
+    "bias_sd_capped120_variation_pct": 7.824120194841372,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 30.635412798437027,
+      "modified_arrhenius_concave": 29.070550847351825,
+      "modified_arrhenius_convex": 31.44787959993952
+    }
+  },
+  {
+    "estimator_name": "mcmc",
+    "kinetics": "autocatalytic",
+    "bias_median_variation_pct": 31.87913209539171,
+    "bias_median_by_variant": {
+      "arrhenius": 70.19821546149107,
+      "modified_arrhenius_concave": 68.56873987783342,
+      "modified_arrhenius_convex": 50.12576245356726
+    },
+    "bias_sd_capped120_variation_pct": 73.48041644354288,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 18.137313651629228,
+      "modified_arrhenius_concave": 14.27031502544312,
+      "modified_arrhenius_convex": 29.41211728438213
+    }
+  },
+  {
+    "estimator_name": "mcmc",
+    "kinetics": "induction",
+    "bias_median_variation_pct": 114.58078308087498,
+    "bias_median_by_variant": {
+      "arrhenius": 67.37842964129524,
+      "modified_arrhenius_concave": 30.209671151320627,
+      "modified_arrhenius_convex": 109.18297838793941
+    },
+    "bias_sd_capped120_variation_pct": 40.47458378969455,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 7.7216101773297074,
+      "modified_arrhenius_concave": 5.077187909483867,
+      "modified_arrhenius_convex": 6.801815584122929
+    }
+  },
+  {
+    "estimator_name": "classical_ols_multi_temp",
+    "kinetics": "first_order",
+    "bias_median_variation_pct": 205.73662868654498,
+    "bias_median_by_variant": {
+      "arrhenius": -1.6231834207074165,
+      "modified_arrhenius_concave": -0.9142897431650674,
+      "modified_arrhenius_convex": -8.44801205358075
+    },
+    "bias_sd_capped120_variation_pct": 11.004991801184557,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 36.417784379919084,
+      "modified_arrhenius_concave": 35.453773607192126,
+      "modified_arrhenius_convex": 39.54074521828019
+    }
+  },
+  {
+    "estimator_name": "classical_ols_multi_temp",
+    "kinetics": "second_order",
+    "bias_median_variation_pct": 39.74574881046991,
+    "bias_median_by_variant": {
+      "arrhenius": -12.40013284373284,
+      "modified_arrhenius_concave": -9.732881810957682,
+      "modified_arrhenius_convex": -14.599407182801624
+    },
+    "bias_sd_capped120_variation_pct": 13.498093160600039,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 36.57790749337044,
+      "modified_arrhenius_concave": 35.99770088093745,
+      "modified_arrhenius_convex": 41.11296401914564
+    }
+  },
+  {
+    "estimator_name": "classical_ols_multi_temp",
+    "kinetics": "autocatalytic",
+    "bias_median_variation_pct": 96.78786809971506,
+    "bias_median_by_variant": {
+      "arrhenius": 54.79019566771526,
+      "modified_arrhenius_concave": 69.1149584510347,
+      "modified_arrhenius_convex": 22.031852595334556
+    },
+    "bias_sd_capped120_variation_pct": 38.256449782691824,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 28.454439147694156,
+      "modified_arrhenius_concave": 25.262268356773028,
+      "modified_arrhenius_convex": 36.805839235273965
+    }
+  },
+  {
+    "estimator_name": "classical_ols_multi_temp",
+    "kinetics": "induction",
+    "bias_median_variation_pct": 21.7072817436324,
+    "bias_median_by_variant": {
+      "arrhenius": 236.20269510271453,
+      "modified_arrhenius_concave": 259.2377006363792,
+      "modified_arrhenius_convex": 208.31560159348177
+    },
+    "bias_sd_capped120_variation_pct": 152.73480647501532,
+    "bias_sd_capped120_by_variant": {
+      "arrhenius": 10.174500206839943,
+      "modified_arrhenius_concave": 2.452465691897863,
+      "modified_arrhenius_convex": 18.09196617819725
+    }
+  }
+]
