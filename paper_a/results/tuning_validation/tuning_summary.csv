@@ -1,0 +1,13 @@
+condition,cell,model,n,n_nonconv,nonconv_rate,ci_lo,ci_hi,frac_rhat,frac_ess,frac_both,frac_error,median_divergences,divergences_available
+A,nt3_strong,centered,120,36,0.3000,0.2253,0.3872,0.694,0.000,0.306,0.000,,False
+A,nt2_strong,centered,120,85,0.7083,0.6216,0.7822,0.471,0.000,0.529,0.000,,False
+A,nt2_accurate,centered,120,78,0.6500,0.5612,0.7295,0.436,0.026,0.538,0.000,,False
+B,nt3_strong,reftemp,120,15,0.1250,0.0772,0.1960,0.400,0.000,0.600,0.000,0.0,True
+B,nt2_strong,reftemp,120,51,0.4250,0.3402,0.5144,0.353,0.000,0.647,0.000,0.0,True
+C,nt3_strong,centered,120,26,0.2167,0.1524,0.2985,0.846,0.000,0.154,0.000,,False
+C,nt2_strong,centered,120,82,0.6833,0.5955,0.7598,0.476,0.000,0.524,0.000,,False
+D,nt3_strong,centered,120,20,0.1667,0.1106,0.2435,0.800,0.000,0.200,0.000,,False
+D,nt2_strong,centered,120,66,0.5500,0.4608,0.6361,0.530,0.000,0.470,0.000,,False
+E,nt3_strong,reftemp,120,3,0.0250,0.0085,0.0709,0.333,0.000,0.667,0.000,0.0,True
+E,nt2_strong,reftemp,120,23,0.1917,0.1313,0.2712,0.174,0.000,0.826,0.000,0.0,True
+E,nt2_accurate,reftemp,120,16,0.1333,0.0838,0.2056,0.188,0.000,0.812,0.000,0.0,True
