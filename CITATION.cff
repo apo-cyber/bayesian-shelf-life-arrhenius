@@ -7,8 +7,8 @@ abstract: >-
   estimator, full MCMC, classical multi-temperature OLS, and the ICH Q1E
   long-term baseline for pharmaceutical shelf-life prediction from accelerated
   stability data, extending Faya et al. (2018).
-version: "0.1.0"
-date-released: "2026-06-06"
+version: "1.0.1"
+date-released: "2026-08-01"
 license: MIT
 authors:
   - given-names: Yasushi

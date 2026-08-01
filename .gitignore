@@ -29,6 +29,12 @@ htmlcov/
 .idea/
 .vscode/
 
+# Figure build products: figures.py writes a 300dpi LZW-TIFF beside each PNG for
+# the publisher's artwork requirements. The PNG is the canonical form and is
+# committed; the TIFF is regenerated on every run, so ignore it to keep a clean
+# clone clean after a reproduction run.
+paper_a/figures/*.tiff
+
 # NOTE: paper_a/data/ and paper_a/results/ are intentionally NOT ignored —
 # they are committed so figures and metrics can be reproduced/checked without
 # re-running the (overnight) simulation. Do not add them here.
