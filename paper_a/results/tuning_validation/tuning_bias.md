@@ -31,4 +31,20 @@
 | MCMC E | 13.3 | 104 | 52.5 | 101.8 | 71.2 | 30.7 | 85 | 99.0 | 92.3 |
 | two_stage_conjugate | 100.0 (fail, N_CONDS_TOO_LOW) | 0 | — | — | — | — | — | — | — |
 
+## nt4_strong (case core_069, N = 120 per condition)
+
+| Condition | non-conv. % | n conv. | bias_median | IQR | MAD | SD cap120 | optimism % | coverage % | CI overflow % |
+|:--|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| MCMC A | 20.0 | 96 | 6.0 | 39.9 | 26.2 | 25.8 | 61 | 80.2 | 51.0 |
+| MCMC E | 0.0 | 120 | 5.5 | 37.7 | 25.6 | 25.8 | 59 | 81.7 | 51.7 |
+| two_stage_conjugate | 0.0 (fail) | 120 | -6.0 | 33.0 | 22.2 | 25.6 | 44 | 93.3 | 0.0 |
+
+## nt3_accurate (case core_040, N = 120 per condition)
+
+| Condition | non-conv. % | n conv. | bias_median | IQR | MAD | SD cap120 | optimism % | coverage % | CI overflow % |
+|:--|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| MCMC A | 16.7 | 100 | 16.2 | 63.7 | 42.0 | 31.4 | 70 | 91.0 | 79.0 |
+| MCMC E | 0.8 | 119 | 17.2 | 58.7 | 44.2 | 31.1 | 70 | 91.6 | 80.7 |
+| two_stage_conjugate | 0.0 (fail) | 120 | -17.1 | 30.3 | 22.4 | 27.5 | 26 | 93.3 | 0.0 |
+
 MCMC point estimate = posterior mean of t90 samples (as in the production run); bias relative to t90_true = 61.6224 months. two_stage_conjugate row: replicates 0-119 of the same case from estimator_results.parquet (stored estimate, implementation-capped at 120).

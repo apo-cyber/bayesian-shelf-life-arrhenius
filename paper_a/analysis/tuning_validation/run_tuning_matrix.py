@@ -16,6 +16,7 @@
 セル (baseline 軸 n_points=4 / noise=medium を固定し n_T × prior を動かす):
     主   : (n_T=3, prior=strong), (n_T=2, prior=strong)   ← 全条件
     診断 : (n_T=2, prior=accurate)                         ← 条件 A, E のみ
+    拡張 : (n_T=4, prior=strong), (n_T=3, prior=accurate)  ← 条件 A, E のみ (改訂時追加)
 
 記録 (各 fit): rhat_max, ess_bulk_min, n_divergences, converged, fail_reason.
     converged / fail_reason は mcmc.py から import した閾値で算出 (再定義禁止).
@@ -57,6 +58,10 @@ CELLS: list[dict] = [
     {"label": "nt3_strong",   "n_t": 3, "prior": "strong",   "applicable": ["A", "B", "C", "D", "E"]},
     {"label": "nt2_strong",   "n_t": 2, "prior": "strong",   "applicable": ["A", "B", "C", "D", "E"]},
     {"label": "nt2_accurate", "n_t": 2, "prior": "accurate", "applicable": ["A", "E"]},
+    # 改訂時追加 (JBS 査読者 2 指摘 2): n_T と prior の反対側の極端で
+    # 「調律は bias を動かさない」を確認する.条件 A, E のみ.
+    {"label": "nt4_strong",   "n_t": 4, "prior": "strong",   "applicable": ["A", "E"]},
+    {"label": "nt3_accurate", "n_t": 3, "prior": "accurate", "applicable": ["A", "E"]},
 ]
 BASELINE_NPOINTS = 4
 BASELINE_NOISE = "medium"

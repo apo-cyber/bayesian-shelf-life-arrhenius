@@ -29,7 +29,7 @@ RESULTS_DIR = Path(__file__).resolve().parents[2] / "results" / "tuning_validati
 Z95 = 1.959963984540054  # 標準正規 97.5% 分位
 
 CONDITION_ORDER = ["A", "B", "C", "D", "E"]
-CELL_ORDER = ["nt3_strong", "nt2_strong", "nt2_accurate"]
+CELL_ORDER = ["nt3_strong", "nt2_strong", "nt2_accurate", "nt4_strong", "nt3_accurate"]
 
 # --- 事前登録した閾値 (本文主張に直結、ここで一元管理) ---
 CENTER_CELL = "nt3_strong"
