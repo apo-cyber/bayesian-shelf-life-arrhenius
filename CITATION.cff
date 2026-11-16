@@ -7,8 +7,8 @@ abstract: >-
   estimator, full MCMC, classical multi-temperature OLS, and the ICH Q1E
   long-term baseline for pharmaceutical shelf-life prediction from accelerated
   stability data, extending Faya et al. (2018).
-version: "1.0.1"
-date-released: "2026-08-01"
+version: "1.1.0"
+date-released: "2026-11-16"
 license: MIT
 authors:
   - given-names: Yasushi
@@ -42,6 +42,9 @@ references:
     year: 2018
     doi: "10.1002/sim.7663"
 notes: >-
-  The accompanying manuscript is under review at a peer-reviewed journal.
+  The accompanying manuscript, "Two-stage conjugate regression versus MCMC for
+  Bayesian shelf-life prediction from accelerated stability data: a simulation
+  study", has been accepted for publication in the Journal of Biopharmaceutical
+  Statistics.
   This repository contains code and synthetic data only; the manuscript PDF is
   not included.

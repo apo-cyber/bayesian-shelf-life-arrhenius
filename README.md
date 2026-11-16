@@ -2,7 +2,8 @@
 
 Reproducibility package for the study
 
-> **Bayesian multi-temperature shelf-life prediction extending Faya et al. (2018)**
+> **Two-stage conjugate regression versus MCMC for Bayesian shelf-life prediction
+> from accelerated stability data: a simulation study**
 > Yasushi Arai — ORCID [0009-0005-7300-4234](https://orcid.org/0009-0005-7300-4234)
 > Production Division, Alfresa Pharma Corporation, Osaka, Japan
 > *(This work was conducted independently of the author's employer, on personal
@@ -15,9 +16,10 @@ procedure, full MCMC (NUTS), classical multi-temperature OLS, and the ICH Q1E
 long-term baseline — across 81 core cases and 20 robustness cases.
 
 > **The manuscript is not included in this repository.** The paper text is
-> managed separately (in accordance with the publisher agreement) and is
-> **under review at a peer-reviewed journal**. This repository contains only the
-> code and synthetic data needed to reproduce the figures, tables, and metrics.
+> managed separately (in accordance with the publisher agreement) and has been
+> **accepted for publication in the *Journal of Biopharmaceutical Statistics***.
+> This repository contains only the code and synthetic data needed to reproduce
+> the figures, tables, and metrics.
 
 ## License
 
@@ -94,7 +96,7 @@ python -m paper_a.analysis.bootstrap_ci
 
 Each manuscript table has one script. Steps 3 and 4 above cover Tables 1 and 2
 (they are read off `results/cell_metrics.json` and `results/bootstrap_ci.json`);
-the remaining three are separate because they aggregate differently.
+the remaining ones are separate because they aggregate differently.
 
 ```bash
 # Table 3 — variation across temperature-dependence variants (reads cell_metrics.json)
@@ -103,8 +105,18 @@ python -m paper_a.analysis.table3_variation
 # Table 4 — sampler-tuning matrix (reads results/tuning_validation/*.jsonl)
 python -m paper_a.analysis.tuning_validation.aggregate_tuning
 
+# Table 4 — bias, IQR and coverage of the converged replicates (reads the same jsonl)
+python -m paper_a.analysis.tuning_validation.aggregate_bias
+
 # Supplementary Table S1 — MCMC non-convergence stratified by sigma (reads the parquet)
 python -m paper_a.analysis.supp_table_s1
+
+# Supplementary Table S2 — propagation of first-stage uncertainty (reads data + parquet;
+# re-fits the second stage on the central cell, seeded Monte Carlo, ~10 s)
+python -m paper_a.analysis.sensitivity.stage1_propagation
+
+# Supplementary Tables S3, S3b — truncation horizon and cap-free summaries (reads the parquet)
+python -m paper_a.analysis.sensitivity.cap_threshold
 ```
 
 Table 4's raw runs are committed under `paper_a/results/tuning_validation/`, so
@@ -141,7 +153,10 @@ The TIFFs are build products and are not tracked.
 | `paper_a/analysis/bootstrap_ci.py` | `results/bootstrap_ci.json` | Table 1 (95% CIs) |
 | `paper_a/analysis/table3_variation.py` | `results/table3_variation.json` | Table 3 |
 | `paper_a/analysis/tuning_validation/aggregate_tuning.py` | `results/tuning_validation/tuning_summary.{csv,md}` | Table 4 |
+| `paper_a/analysis/tuning_validation/aggregate_bias.py` | `results/tuning_validation/tuning_bias.{json,md}` | Table 4 (median bias, IQR, coverage) |
 | `paper_a/analysis/supp_table_s1.py` | `results/supp_table_s1.json` | Supplementary Table S1 |
+| `paper_a/analysis/sensitivity/stage1_propagation.py` | `results/stage1_propagation.{json,md}` | Supplementary Table S2 |
+| `paper_a/analysis/sensitivity/cap_threshold.py` | `results/cap_sensitivity.{json,md}` | Supplementary Tables S3, S3b |
 
 The published value of every figure and table is pinned in `paper_a/tests/`, so
 `pytest` fails if a change to the aggregation moves a number that appears in the
@@ -168,8 +183,9 @@ Please cite the software via `CITATION.cff` (archival **Zenodo DOI:
 concept DOI, which always resolves to the latest version) and the accompanying
 manuscript:
 
-> Arai, Y. *Bayesian multi-temperature shelf-life prediction extending Faya et
-> al. (2018).* Manuscript under review at a peer-reviewed journal.
+> Arai, Y. Two-stage conjugate regression versus MCMC for Bayesian shelf-life
+> prediction from accelerated stability data: a simulation study. *Journal of
+> Biopharmaceutical Statistics*, accepted for publication (2026).
 
 and the work it extends:
 
@@ -178,6 +194,54 @@ and the work it extends:
 > *Statistics in Medicine*, 37(17), 2599–2615. https://doi.org/10.1002/sim.7663
 
 ## Release history
+
+### v1.1.0 — 2026-11-16
+
+Adds the analyses made during peer review, so that every table of the accepted
+manuscript can be regenerated from the archive. In v1.0.1 the extended Table 4
+and Supplementary Tables S2, S3 and S3b could not be, because their code was
+written after that release.
+
+Added:
+
+- `paper_a/analysis/tuning_validation/aggregate_bias.py` — the median bias,
+  IQR and coverage of the converged replicates in **Table 4**, with the
+  two-stage estimator on the same replicates for comparison
+  (`results/tuning_validation/tuning_bias.{json,md}`).
+- Two further cells of the sampler-tuning matrix (n_T = 4 strong, n_T = 3
+  accurate; configurations A and E): four raw jsonl files, bringing
+  `results/tuning_validation/` to 16 jsonl files, and the corresponding rows
+  of `tuning_summary.{csv,md}`.
+- `paper_a/analysis/sensitivity/stage1_propagation.py` — **Supplementary
+  Table S2**, the second stage of the two-stage estimator recomputed under four
+  treatments of first-stage uncertainty
+  (`results/stage1_propagation.{json,md}` and the per-replicate
+  `stage1_propagation_replicates.parquet`).
+- `paper_a/analysis/sensitivity/cap_threshold.py` — **Supplementary Tables S3
+  and S3b**, dispersion under truncation horizons of 60, 120 and 240 months
+  and uncapped, with cap-free summaries (`results/cap_sensitivity.{json,md}`).
+- `paper_a/tests/test_revision_tables.py` — pins the committed outputs above
+  to the values printed in Table 4 and Supplementary Tables S2–S3b.
+
+Fixed:
+
+- `pyproject.toml` still declared `version = "0.1.0"`; it now matches the
+  release (1.1.0).
+
+Unchanged: the estimators, `paper_a/vendor/`, `paper_a/data/`,
+`estimator_results.parquet`, `cell_metrics.json` and `bootstrap_ci.json`. The
+new scripts only read existing outputs (S2 re-fits the second stage from the
+same first-stage fits; its Monte Carlo is seeded).
+
+Verified in a clean clone: `aggregate_tuning`, `aggregate_bias` and
+`cap_threshold` reproduce their committed outputs byte for byte.
+`stage1_propagation` reproduces `stage1_propagation.md` byte for byte; the
+full-precision floats in its JSON and parquet differ from the committed ones by
+at most 4 × 10⁻⁹ relative, which does not reach any printed digit. The test
+suite passes (52 + 45 tests). On a recent macOS command-line toolchain
+PyTensor's C compilation can fail to link (`library 'd64' not found`), which
+makes the two PyMC tests in `test_mcmc.py` fail for reasons unrelated to this
+package; `PYTENSOR_FLAGS='cxx='` runs them in Python mode, where they pass.
 
 ### v1.0.1 — 2026-08-01
 
