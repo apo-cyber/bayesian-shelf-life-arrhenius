@@ -195,6 +195,14 @@ and the work it extends:
 
 ## Release history
 
+### v1.1.1 — 2026-11-16
+
+Metadata only. The `.zenodo.json` archived with v1.1.0 still declared
+`"version": "1.0.1"`, so the Zenodo record of v1.1.0 was first published with
+that version number (its metadata has since been corrected on Zenodo). This
+release sets the version to 1.1.1 in `.zenodo.json`, `CITATION.cff` and
+`pyproject.toml`. No code, data, result or test differs from v1.1.0.
+
 ### v1.1.0 — 2026-11-16
 
 Adds the analyses made during peer review, so that every table of the accepted
